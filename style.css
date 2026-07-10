@@ -1,290 +1,415 @@
-/* THE RED STRING THEORY */
-/* CSS PART 1: MAIN THEME */
+/* 
+THE RED STRING THEORY ❤️
+JOSE'S BIRTHDAY WEBSITE
+CSS PART 1: MAIN STYLE
+*/
 
 
 * {
+
     margin: 0;
+
     padding: 0;
+
     box-sizing: border-box;
+
 }
+
 
 
 body {
 
+
     font-family: "Poppins", sans-serif;
 
+
     background:
+
     linear-gradient(
+
         180deg,
-        #100018,
-        #26002f,
+
+        #100014,
+
+        #25002f,
+
         #140008
+
     );
+
 
     color: white;
 
+
     text-align: center;
+
 
     overflow-x: hidden;
 
+
 }
+
+
+
 
 
 
 section {
 
+
     min-height: 100vh;
+
 
     padding: 80px 20px;
 
+
     display: flex;
 
-    flex-direction: column;
 
     justify-content: center;
 
+
     align-items: center;
+
+
+    flex-direction: column;
+
 
 }
 
 
 
-/* HEADINGS */
+
+
 
 h1 {
 
+
     font-size: 55px;
+
 
     color: #ff4d6d;
 
+
     text-shadow:
+
+
     0 0 20px rgba(255,77,109,0.8);
 
+
+    margin-bottom: 20px;
+
+
 }
+
+
+
 
 
 
 h2 {
 
+
     font-size: 38px;
+
 
     margin-bottom: 20px;
 
+
+    color: #ff8fab;
+
+
 }
+
+
+
 
 
 
 h3 {
 
+
     margin-bottom: 15px;
 
+
+    color: #ffd1dc;
+
+
 }
+
+
+
+
+
+
+p {
+
+
+    line-height: 1.8;
+
+
+    font-size: 17px;
+
+
+}
+
+
+
+
 
 
 
 .subtitle {
 
+
     max-width: 650px;
 
-    line-height: 1.8;
 
-    font-size: 18px;
+    margin: 20px auto 40px;
 
-    opacity: 0.85;
+
+    opacity: .85;
+
 
 }
 
 
 
-/* GLASS EFFECT CARDS */
 
+
+
+
+
+/* GLASS CARD STYLE */
+
+
+.opening-card,
+
+.story-card,
 
 .memory-card,
+
 .player-card,
+
 .music-card,
+
 .gift-card,
+
 .pets-card,
-.ending-card,
-.wish-box {
+
+.ending-card {
 
 
     background:
 
-    rgba(255,255,255,0.07);
+
+    rgba(255,255,255,0.08);
+
 
 
     backdrop-filter: blur(15px);
 
 
-    border-radius: 25px;
+
+    border-radius: 30px;
+
 
 
     padding: 35px;
 
 
+
+    width: 90%;
+
+
+
+    max-width: 800px;
+
+
+
+
     border:
+
 
     1px solid rgba(255,255,255,0.15);
 
 
+
+
     box-shadow:
 
-    0 0 35px rgba(255,40,90,0.25);
+
+    0 0 35px rgba(255,50,100,.25);
 
 
 }
 
 
 
-/* BUTTONS */
+
+
+
+
+
+/* BUTTON STYLE */
 
 
 button {
 
-    margin-top: 20px;
+
+    margin-top: 25px;
+
 
     padding: 15px 35px;
 
-    border-radius: 50px;
 
     border: none;
 
+
+    border-radius: 50px;
+
+
     cursor: pointer;
+
 
     color: white;
 
-    font-size: 16px;
+
+    font-size: 17px;
+
+
+
 
     background:
 
+
     linear-gradient(
+
         45deg,
+
         #ff1744,
+
         #9c27ff
+
     );
 
 
-    transition: 0.3s;
+
+    transition: .3s;
+
 
 }
+
+
 
 
 
 button:hover {
 
+
     transform: scale(1.08);
+
 
     box-shadow:
 
+
     0 0 25px #ff1744;
+
 
 }
 
 
 
-/* EMOJIS / ICONS */
 
 
-.game-icon,
+
+
+/* ICONS */
+
+
+.player-icon,
+
 .music-icon,
+
 .gift-icon,
+
 .pets-icon,
+
 .ending-icon {
+
 
     font-size: 70px;
 
+
     margin-bottom: 20px;
 
-}
-
-/* CSS PART 2: MEMORY TIMELINE + RED STRING */
-
-
-/* MEMORY TIMELINE */
-
-.timeline {
-
-    display: flex;
-
-    flex-direction: column;
-
-    gap: 30px;
-
-    width: 90%;
-
-    max-width: 700px;
-
-    margin-top: 30px;
 
 }
 
+/* CSS PART 2
+OPENING + STORY + MEMORY TIMELINE
+*/
 
 
-.memory-card {
+/* OPENING SCENE */
 
-    position: relative;
 
-    text-align: center;
+.opening-card {
 
-    animation: fadeUp 1s ease;
+
+    animation:
+
+    fadeIn 1.5s ease;
+
 
 }
 
 
 
-.memory-icon {
-
-    font-size: 45px;
-
-    margin-bottom: 15px;
-
-}
 
 
+.opening-card p {
 
-.date {
 
-    display: inline-block;
+    max-width: 600px;
 
-    margin-top: 15px;
 
-    color: #ff6b8a;
+    margin: 20px auto;
 
-    font-size: 14px;
-
-    letter-spacing: 2px;
 
 }
+
+
+
 
 
 
 /* RED STRING LINE */
 
 
-.timeline::before {
-
-    content: "";
-
-    position: absolute;
-
-    width: 3px;
-
-    height: 70%;
-
-    background:
-
-    linear-gradient(
-        to bottom,
-        #ff1744,
-        #ff6b8a
-    );
+.string-line {
 
 
-    left: 50%;
+    margin: 35px 0;
 
-    transform: translateX(-50%);
 
-    z-index: -1;
+    font-size: 22px;
+
+
+    color: #ff4d6d;
+
+
+    text-shadow:
+
+
+    0 0 15px #ff1744;
+
+
+    animation:
+
+
+    glow 2s infinite alternate;
+
 
 }
 
@@ -292,354 +417,530 @@ button:hover {
 
 
 
-/* WISH BOX */
 
 
-.wish-box {
+/* STORY SECTION */
 
-    margin-top: 50px;
 
-    max-width: 600px;
+.story-card {
+
+
+    line-height: 1.8;
+
 
 }
 
 
 
-.wish-box h3 {
 
-    color: #ff6b8a;
+
+
+.story-card h3 {
+
 
     font-size: 28px;
 
-}
 
+    color: #ff8fab;
 
-
-/* HEART GARDEN */
-
-
-.garden {
-
-    display: flex;
-
-    justify-content: center;
-
-    gap: 25px;
-
-    flex-wrap: wrap;
-
-    margin: 40px 0;
-
-}
-
-
-
-.flower {
-
-    font-size: 60px;
-
-    animation:
-
-    float 3s infinite ease-in-out;
-
-}
-
-
-
-.flower:nth-child(even){
-
-    animation-delay: 1s;
-
-}
-
-
-
-/* FLOATING HEARTS */
-
-
-.floating-hearts span {
-
-    display: inline-block;
-
-    font-size: 35px;
-
-    margin: 15px;
-
-    cursor: pointer;
-
-    animation:
-
-    float 2s infinite ease-in-out;
-
-}
-
-
-
-.floating-hearts span:hover {
-
-    transform: scale(1.3);
-
-}
-
-
-
-.heart-message {
 
     margin-top: 30px;
 
-    max-width: 500px;
 
 }
 
 
 
-/* ANIMATIONS */
 
 
-@keyframes float {
-
-    0% {
-
-        transform: translateY(0px);
-
-    }
 
 
-    50% {
-
-        transform: translateY(-15px);
-
-    }
+/* MEMORY TIMELINE */
 
 
-    100% {
+.memory-container {
 
-        transform: translateY(0px);
 
-    }
+    width: 100%;
+
+
+    display: flex;
+
+
+    flex-direction: column;
+
+
+    align-items: center;
+
 
 }
 
 
 
-@keyframes fadeUp {
+
+
+
+.timeline {
+
+
+    display: flex;
+
+
+    flex-direction: column;
+
+
+    gap: 35px;
+
+
+    width: 90%;
+
+
+    max-width: 700px;
+
+
+    margin-top: 30px;
+
+
+}
+
+
+
+
+
+
+
+.memory-card {
+
+
+    position: relative;
+
+
+    transition: .3s;
+
+
+}
+
+
+
+
+
+.memory-card:hover {
+
+
+    transform: translateY(-10px);
+
+
+    box-shadow:
+
+
+    0 0 35px rgba(255,70,120,.5);
+
+
+}
+
+
+
+
+
+
+
+.memory-icon {
+
+
+    font-size: 50px;
+
+
+    margin-bottom: 15px;
+
+
+}
+
+
+
+
+
+
+
+/* FLOATING EFFECTS */
+
+
+@keyframes fadeIn {
+
 
     from {
 
+
         opacity: 0;
+
 
         transform: translateY(40px);
 
+
     }
+
 
 
     to {
 
+
         opacity: 1;
 
+
         transform: translateY(0);
+
 
     }
 
 }
 
-/* CSS PART 3: PLAYER TWO + MUSIC + GIFTS */
+
+
+
+
+
+@keyframes glow {
+
+
+    from {
+
+
+        text-shadow:
+
+
+        0 0 10px #ff1744;
+
+
+    }
+
+
+
+    to {
+
+
+        text-shadow:
+
+
+        0 0 30px #ff8fab;
+
+
+    }
+
+}
+
+/* CSS PART 3
+PLAYER TWO + MUSIC ROOM + GIFT ROOM
+*/
+
 
 
 /* PLAYER TWO */
 
 
-.stats {
+.player-stats {
+
 
     display: flex;
 
+
     justify-content: center;
 
-    gap: 20px;
+
+    gap: 25px;
+
 
     flex-wrap: wrap;
 
+
     margin: 35px 0;
+
 
 }
 
 
 
-.stat-box {
+
+
+
+.stat {
+
+
+    width: 170px;
+
+
+    padding: 25px;
+
+
 
     background:
 
-    rgba(255,255,255,0.08);
+
+    rgba(255,255,255,.08);
 
 
-    padding: 20px;
 
-    border-radius: 20px;
+    border-radius: 25px;
 
-    width: 150px;
+
 
 
     border:
 
-    1px solid rgba(255,255,255,0.15);
+
+    1px solid rgba(255,255,255,.15);
+
+
+    transition: .3s;
+
 
 }
 
 
 
-.stat-box h3 {
 
-    font-size: 35px;
+
+
+.stat:hover {
+
+
+    transform: translateY(-10px);
+
+
+    box-shadow:
+
+
+    0 0 25px rgba(255,80,120,.5);
+
+
+}
+
+
+
+
+
+
+.stat h3 {
+
+
+    font-size: 40px;
+
 
     color: #ff6b8a;
 
+
 }
+
+
+
 
 
 
 .level-box {
 
-    margin-top: 30px;
+
+    margin-top: 35px;
+
 
 }
+
+
+
 
 
 
 .level-bar {
 
+
     width: 100%;
+
 
     height: 25px;
 
+
     background:
 
-    rgba(255,255,255,0.15);
+
+    rgba(255,255,255,.15);
+
 
 
     border-radius: 50px;
 
+
     overflow: hidden;
+
 
     margin: 20px 0;
 
+
 }
+
+
+
 
 
 
 .level-progress {
 
+
     height: 100%;
+
 
     width: 100%;
 
+
+
     display: flex;
 
+
     justify-content: center;
+
 
     align-items: center;
 
 
+
     background:
 
+
     linear-gradient(
+
         90deg,
+
         #ff1744,
+
         #ff80ab
+
     );
+
 
 
     border-radius: 50px;
 
+
     font-size: 13px;
 
-}
-
-
-
-.message-box {
-
-    margin-top: 35px;
-
-    line-height: 1.8;
 
 }
+
+
+
+
+
+
 
 
 
 /* MUSIC ROOM */
 
 
+
 .song-box {
 
+
     margin-top: 30px;
+
 
     padding: 30px;
 
 
     background:
 
-    rgba(255,255,255,0.06);
+
+    rgba(255,255,255,.06);
+
 
 
     border-radius: 25px;
 
+
 }
+
+
+
 
 
 
 .song-box h3 {
 
+
     font-size: 30px;
 
-    color: #ff6b8a;
+
+    color: #ff8fab;
+
 
 }
+
+
+
 
 
 
 #musicMessage {
 
+
     margin-top: 20px;
 
+
     color: #ffd1dc;
+
 
 }
 
 
 
-/* MUSIC NOTES */
+
 
 
 .music-notes span {
 
+
     display: inline-block;
 
+
     font-size: 40px;
+
 
     margin: 20px;
 
 
     animation:
 
-    float 2s infinite;
+
+    float 3s infinite ease-in-out;
+
 
 }
+
+
+
 
 
 
 .music-notes span:nth-child(2){
 
+
     animation-delay: .5s;
 
+
 }
+
+
+
 
 
 
 .music-notes span:nth-child(3){
 
+
     animation-delay: 1s;
 
+
 }
+
+
+
+
 
 
 
@@ -648,75 +949,92 @@ button:hover {
 /* GIFT ROOM */
 
 
+
 .gifts-container {
+
 
     display: flex;
 
+
     justify-content: center;
 
-    gap: 30px;
+
+    gap: 35px;
+
 
     flex-wrap: wrap;
 
+
     margin-top: 40px;
 
+
 }
+
+
+
 
 
 
 .gift {
 
+
     cursor: pointer;
+
 
     transition: .3s;
 
+
 }
+
+
+
 
 
 
 .gift:hover {
 
-    transform: translateY(-10px);
+
+    transform: translateY(-15px) scale(1.05);
+
 
 }
+
+
+
 
 
 
 .gift-box {
 
+
     font-size: 75px;
+
 
     filter:
 
-    drop-shadow(
-    0 0 15px #ff1744
-    );
+
+    drop-shadow(0 0 15px #ff1744);
+
 
 }
+
+
+
 
 
 
 .gift h3 {
 
+
     margin-top: 15px;
 
-    color: #ff9bb5;
 
 }
 
+/* CSS PART 4
+GUARDIAN PETS + FINAL LETTER + MOBILE
+*/
 
-
-.gift-message {
-
-    margin-top: 40px;
-
-    font-size: 18px;
-
-    line-height: 1.7;
-
-}
-
-/* CSS PART 4: GUARDIAN PETS + ENDING */
 
 
 /* GUARDIAN PETS */
@@ -724,33 +1042,47 @@ button:hover {
 
 .pets-container {
 
+
     display: flex;
+
 
     justify-content: center;
 
+
     gap: 30px;
+
 
     flex-wrap: wrap;
 
+
     margin-top: 40px;
+
 
 }
 
 
 
+
+
+
 .pet {
 
-    width: 200px;
+
+    width: 210px;
+
 
     padding: 25px;
 
 
     background:
 
-    rgba(255,255,255,0.07);
+
+    rgba(255,255,255,.08);
+
 
 
     border-radius: 25px;
+
 
 
     cursor: pointer;
@@ -759,64 +1091,96 @@ button:hover {
     transition: .3s;
 
 
+
     border:
 
-    1px solid rgba(255,255,255,0.15);
+
+    1px solid rgba(255,255,255,.15);
+
 
 }
+
+
+
 
 
 
 .pet:hover {
 
+
     transform: translateY(-12px);
+
 
     box-shadow:
 
-    0 0 25px rgba(255,80,120,0.5);
+
+    0 0 30px rgba(255,80,120,.5);
+
 
 }
+
+
+
 
 
 
 .pet-image {
 
+
     font-size: 70px;
+
 
     margin-bottom: 15px;
 
+
 }
+
+
+
 
 
 
 .pet h3 {
 
+
     color: #ff8fab;
 
+
 }
+
+
+
 
 
 
 .pet-message {
 
-    margin-top: 40px;
 
-    font-size: 18px;
+    margin-top: 35px;
 
-    max-width: 550px;
 
-    line-height: 1.8;
+    max-width: 600px;
+
 
 }
+
+
+
+
+
+
 
 
 
 /* FINAL LETTER */
 
 
+
 .final-letter {
 
+
     display: none;
+
 
     margin-top: 35px;
 
@@ -824,15 +1188,16 @@ button:hover {
     padding: 35px;
 
 
-    max-width: 650px;
-
 
     background:
 
-    rgba(255,255,255,0.08);
+
+    rgba(255,255,255,.08);
+
 
 
     border-radius: 25px;
+
 
 
     line-height: 1.9;
@@ -840,144 +1205,110 @@ button:hover {
 
     animation:
 
-    fadeUp 1s ease;
+
+    fadeIn 1s ease;
+
 
 }
+
+
+
 
 
 
 .final-letter h3 {
 
-    color:
 
-    #ff6b8a;
+    font-size: 32px;
 
 
-    font-size: 30px;
+    color: #ff6b8a;
+
 
 }
+
+
+
 
 
 
 .final-letter p {
 
+
     margin: 20px 0;
+
 
 }
 
 
 
-/* FIREWORK HEART EFFECT */
 
 
-.fireworks span {
 
-    display: inline-block;
+
+
+
+/* ENDING DECORATION */
+
+
+
+.ending-decoration {
+
+
+    margin-top: 40px;
+
 
     font-size: 35px;
 
-    margin: 20px;
-
 
     animation:
 
-    pulse 2s infinite;
+
+    float 3s infinite ease-in-out;
+
 
 }
 
 
 
-.fireworks span:nth-child(2){
-
-    animation-delay: .5s;
-
-}
-
-
-.fireworks span:nth-child(3){
-
-    animation-delay: 1s;
-
-}
 
 
 
-/* RED STRING GLOW */
-
-
-.ending-card::before {
-
-    content: "";
-
-    position: absolute;
-
-    width: 150px;
-
-    height: 150px;
-
-
-    background:
-
-    rgba(255,0,70,0.35);
-
-
-    filter: blur(70px);
-
-
-    z-index: -1;
-
-}
 
 
 
-.ending-card {
-
-    position: relative;
-
-}
+/* FLOAT ANIMATION */
 
 
 
-/* SECRET MAGIC EFFECT */
+@keyframes float {
 
-
-section::after {
-
-    content: "🧵";
-
-    position: absolute;
-
-    font-size: 25px;
-
-    opacity: .15;
-
-    animation:
-
-    float 5s infinite ease-in-out;
-
-}
-
-
-
-@keyframes pulse {
 
     0% {
 
-        transform: scale(1);
+
+        transform: translateY(0);
+
 
     }
+
 
 
     50% {
 
-        transform: scale(1.25);
+
+        transform: translateY(-15px);
+
 
     }
 
 
+
     100% {
 
-        transform: scale(1);
+
+        transform: translateY(0);
+
 
     }
 
@@ -985,46 +1316,91 @@ section::after {
 
 
 
-/* MOBILE DESIGN */
+
+
+
+
+
+
+/* MOBILE SUPPORT */
+
 
 
 @media(max-width:700px){
 
 
+
     h1 {
 
-        font-size: 40px;
+
+        font-size: 38px;
+
 
     }
+
+
+
 
 
     h2 {
 
+
         font-size: 30px;
+
 
     }
 
 
-    .stats {
+
+
+
+    .player-stats {
+
 
         flex-direction: column;
 
+
         align-items: center;
+
 
     }
 
 
-    .stat-box {
+
+
+
+    .stat {
+
 
         width: 80%;
 
+
+    }
+
+
+
+
+
+    .gift-box {
+
+
+        font-size: 60px;
+
+
     }
 
 
-    .timeline::before {
 
-        display: none;
+
+
+    .pet {
+
+
+        width: 80%;
+
 
     }
+
+
 
 }
