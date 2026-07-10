@@ -1,3 +1,5 @@
+alert("JS IS WORKING 💜");
+
 let currentScene = 0;
 
 
