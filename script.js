@@ -1,352 +1,297 @@
-let currentScene = 0;
+// THE RED STRING THEORY
+// JAVASCRIPT PART 1
 
 
-const scenes = document.querySelectorAll(".scene");
+// HEART MESSAGES ❤️
+
+function showHeartMessage(){
+
+    const messages = [
+
+        "Some people cross paths by chance... but some feel like fate 🧵❤️",
+
+        "Every little moment became a thread connecting us ✨",
+
+        "I hope we keep creating memories together 🌹",
+
+        "The red string may stretch, but it never disappears ❤️",
+
+        "Some connections are worth holding onto forever 💜"
+
+    ];
 
 
-const levelDisplay = document.getElementById("levelDisplay");
+    const randomMessage =
+    messages[Math.floor(Math.random() * messages.length)];
 
 
-
-function nextScene(){
-
-if(currentScene < scenes.length - 1){
-
-
-let oldScene = scenes[currentScene];
-
-
-// exit animation
-
-oldScene.classList.add("exit");
-
-
-
-setTimeout(()=>{
-
-
-oldScene.classList.remove("active");
-
-oldScene.classList.remove("exit");
-
-
-
-currentScene++;
-
-
-
-let newScene = scenes[currentScene];
-
-
-newScene.classList.add("active");
-
-newScene.classList.add("unlock");
-
-
-
-levelDisplay.innerHTML =
-"LEVEL " + (currentScene + 1) + " / 10";
-
-
-
-setTimeout(()=>{
-
-newScene.classList.remove("unlock");
-
-},800);
-
-
-
-
-if(currentScene === 3){
-
-createHearts();
-
-}
-
-
-
-},500);
-
-
-}
-
+    document.getElementById("heartText").innerHTML =
+    randomMessage;
 
 }
 
 
 
 
+// MUSIC MESSAGE 🎵
+
+function playMusicMessage(){
+
+    const musicMessages = [
+
+        "This song will always remind me of this little world we created ❤️",
+
+        "Every melody feels warmer when it reminds me of someone special 🎶",
+
+        "A song can hold memories the same way a red string holds connections 🧵"
+
+    ];
+
+
+    const randomMusic =
+    musicMessages[Math.floor(Math.random() * musicMessages.length)];
+
+
+    document.getElementById("musicMessage").innerHTML =
+    randomMusic;
+
+}
+
+// JAVASCRIPT PART 2
+// GIFTS + PETS + FINAL LETTER
 
 
 
-// Letter opening
+// GIFT ROOM 🎁
 
+function openGift(number){
+
+    let message = "";
+
+
+    if(number === 1){
+
+        message =
+        "🎁 Gift One: A promise to always cheer for you and celebrate your happiness.";
+
+    }
+
+
+    if(number === 2){
+
+        message =
+        "💌 Gift Two: More memories, more laughter, and more moments together.";
+
+    }
+
+
+    if(number === 3){
+
+        message =
+        "🧵 Gift Three: The red string that connects two people who matter to each other.";
+
+    }
+
+
+    document.getElementById("giftText").innerHTML = message;
+
+}
+
+
+
+
+
+// GUARDIAN PETS 🐾
+
+function choosePet(pet){
+
+    let message = "";
+
+
+    if(pet === "cat"){
+
+        message =
+        "🐱 Moon Cat: I will protect your peaceful nights and your sweetest dreams.";
+
+    }
+
+
+    if(pet === "dog"){
+
+        message =
+        "🐶 Star Dog: I will protect your smiles and all your happy memories.";
+
+    }
+
+
+    if(pet === "bear"){
+
+        message =
+        "🧸 Heart Bear: I will remind you that your heart deserves kindness.";
+
+    }
+
+
+    document.getElementById("petText").innerHTML = message;
+
+}
+
+
+
+
+
+// FINAL LETTER 💌
 
 function openLetter(){
 
+    const letter =
+    document.getElementById("letter");
 
-const letter =
-document.getElementById("letterBox");
+
+    letter.style.display = "block";
 
 
-letter.classList.add("show");
+    letter.scrollIntoView({
 
+        behavior: "smooth"
+
+    });
+
+}
+
+// JAVASCRIPT PART 3
+// RED STRING THEORY MAGIC EFFECTS 🧵✨
+
+
+
+// CREATE FLOATING HEARTS ❤️
+
+function createHeart(){
+
+
+    const heart = document.createElement("div");
+
+
+    heart.innerHTML = "❤️";
+
+
+    heart.className = "floating-heart";
+
+
+    heart.style.left =
+    Math.random() * 100 + "vw";
+
+
+    heart.style.animationDuration =
+    (Math.random() * 3 + 3) + "s";
+
+
+    document.body.appendChild(heart);
+
+
+
+    setTimeout(()=>{
+
+        heart.remove();
+
+    },6000);
 
 
 }
 
 
 
+// START HEARTS
 
+setInterval(createHeart, 1200);
 
 
 
 
-// Heart Garden
 
 
-const reasons = [
 
-"You make me smile even on difficult days 💜",
+// SCROLL REVEAL EFFECT ✨
 
-"You make ordinary moments magical",
 
-"I can be myself around you",
+const sections =
+document.querySelectorAll("section");
 
-"Your laugh makes me happy",
 
-"You make my life brighter",
+window.addEventListener("scroll", ()=>{
 
-"I love our random conversations",
 
-"You make me feel loved",
+    sections.forEach(section=>{
 
-"I treasure every memory with you",
 
-"You make me excited for the future",
+        const position =
+        section.getBoundingClientRect().top;
 
-"I trust you",
 
-"I love your personality",
+        const screenHeight =
+        window.innerHeight;
 
-"I love our inside jokes",
 
-"I love spending time with you",
 
-"You make moments unforgettable",
+        if(position < screenHeight - 100){
 
-"I feel lucky I found you",
+            section.style.opacity = "1";
 
-"You are one of my favorite people",
+            section.style.transform =
+            "translateY(0)";
 
-"You make my heart happy",
+        }
 
-"I am grateful our paths crossed",
 
-"You make my world better",
-
-"I love you because you are you 💜"
-
-];
-
-
-
-
-let heartsCollected = 0;
-
-
-
-function createHearts(){
-
-
-const garden =
-document.getElementById("garden");
-
-garden.innerHTML="";
-
-
-reasons.forEach((reason)=>{
-
-
-let heart =
-document.createElement("div");
-
-
-heart.className="heart";
-
-
-heart.innerHTML="💗";
-
-
-
-heart.onclick=function(){
-
-
-heart.style.transform="scale(0)";
-
-
-
-setTimeout(()=>{
-
-heart.remove();
-
-},300);
-
-
-
-heartsCollected++;
-
-
-
-document.getElementById("heartDisplay")
-.innerHTML =
-"💗 " + heartsCollected + " / 20";
-
-
-
-showReason(reason);
-
-
-
-if(heartsCollected === 20){
-
-
-setTimeout(()=>{
-
-alert(
-"✨ Heart Garden Complete ✨\n\nYou unlocked all my reasons."
-);
-
-
-},500);
-
-
-}
-
-
-
-};
-
-
-
-garden.appendChild(heart);
-
+    });
 
 
 });
 
 
-}
 
 
 
 
 
+// RED STRING CLICK EFFECT 🧵
 
 
-function showReason(text){
+document.addEventListener("click", function(event){
 
 
-const box =
-document.getElementById("reasonBox");
+    const string =
+    document.createElement("span");
 
 
+    string.innerHTML = "🧵";
 
-box.innerHTML =
 
-"💜 " + text;
+    string.className =
+    "string-effect";
 
 
-box.style.animation="none";
+    string.style.left =
+    event.pageX + "px";
 
 
-setTimeout(()=>{
+    string.style.top =
+    event.pageY + "px";
 
-box.style.animation="enter .5s";
 
-},10);
 
+    document.body.appendChild(string);
 
-}
 
 
+    setTimeout(()=>{
 
 
+        string.remove();
 
 
-
-
-
-// Gift opening
-
-
-function openGift(box){
-
-
-box.innerHTML="✨💜✨";
-
-
-document.getElementById("giftMessage")
-.innerHTML =
-"You found a little piece of my heart 💜";
-
-
-}
-
-
-
-
-
-
-
-
-
-// Click sparkle effect
-
-
-document.addEventListener(
-"click",
-function(event){
-
-
-let sparkle =
-document.createElement("span");
-
-
-sparkle.innerHTML="✨";
-
-
-sparkle.style.position="fixed";
-
-sparkle.style.left=
-event.clientX+"px";
-
-
-sparkle.style.top=
-event.clientY+"px";
-
-
-sparkle.style.fontSize="25px";
-
-
-sparkle.style.pointerEvents="none";
-
-
-sparkle.style.zIndex="99";
-
-
-
-document.body.appendChild(sparkle);
-
-
-
-setTimeout(()=>{
-
-sparkle.remove();
-
-},700);
-
+    },1000);
 
 
 });
+
