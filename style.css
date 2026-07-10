@@ -1490,3 +1490,55 @@ GUARDIAN PETS + FINAL LETTER + MOBILE
     }
 
 }
+
+/* STORY MODE - ONE SCENE AT A TIME 🧵 */
+
+section {
+
+    display: none;
+
+    min-height: 100vh;
+
+}
+
+
+section.active {
+
+    display: flex;
+
+    animation: sceneEnter 1s ease;
+
+}
+
+
+
+@keyframes sceneEnter {
+
+
+    from {
+
+        opacity: 0;
+
+        transform: scale(1.05);
+
+    }
+
+
+    to {
+
+        opacity: 1;
+
+        transform: scale(1);
+
+    }
+
+}
+
+
+/* REMOVE NORMAL SCROLL FEEL */
+
+body {
+
+    overflow: hidden;
+
+}
