@@ -1404,3 +1404,89 @@ GUARDIAN PETS + FINAL LETTER + MOBILE
 
 
 }
+
+/* PART 3 EFFECT STYLES */
+
+
+.floating-heart {
+
+    position: fixed;
+
+    bottom: -20px;
+
+    font-size: 25px;
+
+    animation: heartFloat 6s linear forwards;
+
+    pointer-events: none;
+
+    z-index: 999;
+
+}
+
+
+
+@keyframes heartFloat {
+
+
+    from {
+
+        transform: translateY(0);
+
+        opacity: 1;
+
+    }
+
+
+    to {
+
+        transform: translateY(-110vh);
+
+        opacity: 0;
+
+    }
+
+}
+
+
+
+
+
+.string-effect {
+
+    position: absolute;
+
+    font-size: 25px;
+
+    pointer-events: none;
+
+    animation: stringPop 1s forwards;
+
+}
+
+
+
+
+
+@keyframes stringPop {
+
+
+    0% {
+
+        transform: scale(0);
+
+        opacity: 1;
+
+    }
+
+
+
+    100% {
+
+        transform: scale(2);
+
+        opacity: 0;
+
+    }
+
+}
