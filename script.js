@@ -1,38 +1,47 @@
-let currentLevel = 0;
-
-const levels = document.querySelectorAll(".level");
-
-const levelText = document.getElementById("levelText");
+let currentScene = 0;
 
 
-
-function nextLevel(){
-
-    if(currentLevel < levels.length - 1){
-
-        levels[currentLevel]
-        .classList.remove("active");
+const scenes = document.querySelectorAll(".scene");
 
 
-        currentLevel++;
+const levelDisplay = document.getElementById("levelDisplay");
 
 
-        levels[currentLevel]
-        .classList.add("active");
+
+function nextScene(){
 
 
-        levelText.innerHTML =
-        "Level " + (currentLevel + 1) + " / 10";
+if(currentScene < scenes.length - 1){
 
 
-        if(currentLevel === 3){
-
-            createHeartGarden();
-
-        }
+scenes[currentScene]
+.classList.remove("active");
 
 
-    }
+
+currentScene++;
+
+
+
+scenes[currentScene]
+.classList.add("active");
+
+
+
+levelDisplay.innerHTML =
+"LEVEL " + (currentScene + 1) + " / 10";
+
+
+
+if(currentScene === 3){
+
+createHearts();
+
+}
+
+
+}
+
 
 }
 
@@ -42,94 +51,111 @@ function nextLevel(){
 
 
 
-// 20 reasons
+// Letter opening
+
+
+function openLetter(){
+
+
+const letter =
+document.getElementById("letterBox");
+
+
+letter.classList.add("show");
+
+
+
+}
+
+
+
+
+
+
+
+
+// Heart Garden
+
 
 const reasons = [
 
-"You make me smile even when I don't realize I need it. 💜",
+"You make me smile even on difficult days 💜",
 
-"You make normal days feel special.",
+"You make ordinary moments magical",
 
-"I can always be myself around you.",
+"I can be myself around you",
 
-"Your laugh is one of my favorite sounds.",
+"Your laugh makes me happy",
 
-"You make my life brighter.",
+"You make my life brighter",
 
-"I love our random conversations.",
+"I love our random conversations",
 
-"You make me feel cared for.",
+"You make me feel loved",
 
-"I love all the memories we create.",
+"I treasure every memory with you",
 
-"You make me excited for the future.",
+"You make me excited for the future",
 
-"You are someone I can trust.",
+"I trust you",
 
-"I love your personality.",
+"I love your personality",
 
-"I love our little jokes.",
+"I love our inside jokes",
 
-"I love spending time with you.",
+"I love spending time with you",
 
-"You make moments unforgettable.",
+"You make moments unforgettable",
 
-"I feel lucky that I found you.",
+"I feel lucky I found you",
 
-"You are one of my favorite people.",
+"You are one of my favorite people",
 
-"You make me feel happy.",
+"You make my heart happy",
 
-"I am grateful our paths crossed.",
+"I am grateful our paths crossed",
 
-"You make my world better.",
+"You make my world better",
 
-"I love you because you are you. 💜"
+"I love you because you are you 💜"
 
 ];
 
 
 
 
-
-let collected = 0;
-
+let heartsCollected = 0;
 
 
-function createHeartGarden(){
+
+function createHearts(){
 
 
 const garden =
-document.getElementById("heartGarden");
-
+document.getElementById("garden");
 
 garden.innerHTML="";
 
-collected=0;
 
-
-document.getElementById("heartCount")
-.innerHTML="0 / 20 Hearts";
-
-
-
-reasons.forEach((reason,index)=>{
+reasons.forEach((reason)=>{
 
 
 let heart =
 document.createElement("div");
 
 
-heart.className="love-heart";
+heart.className="heart";
 
 
 heart.innerHTML="💗";
+
 
 
 heart.onclick=function(){
 
 
 heart.style.transform="scale(0)";
+
 
 
 setTimeout(()=>{
@@ -140,12 +166,13 @@ heart.remove();
 
 
 
-collected++;
+heartsCollected++;
 
 
-document.getElementById("heartCount")
+
+document.getElementById("heartDisplay")
 .innerHTML =
-collected + " / 20 Hearts";
+"💗 " + heartsCollected + " / 20";
 
 
 
@@ -153,17 +180,21 @@ showReason(reason);
 
 
 
-if(collected===20){
+if(heartsCollected === 20){
+
 
 setTimeout(()=>{
 
 alert(
-"💜 Heart Garden Complete!\n\nYou unlocked all 20 reasons."
+"✨ Heart Garden Complete ✨\n\nYou unlocked all my reasons."
 );
+
 
 },500);
 
+
 }
+
 
 
 };
@@ -171,6 +202,7 @@ alert(
 
 
 garden.appendChild(heart);
+
 
 
 });
@@ -184,25 +216,27 @@ garden.appendChild(heart);
 
 
 
-
 function showReason(text){
 
 
-let message =
-document.createElement("div");
-
-
-message.className="card";
-
-
-message.innerHTML =
-"💗 " + text;
+const box =
+document.getElementById("reasonBox");
 
 
 
-document.getElementById("heartGarden")
-.appendChild(message);
+box.innerHTML =
 
+"💜 " + text;
+
+
+box.style.animation="none";
+
+
+setTimeout(()=>{
+
+box.style.animation="enter .5s";
+
+},10);
 
 
 }
@@ -212,11 +246,39 @@ document.getElementById("heartGarden")
 
 
 
-// Secret little sparkle effect
+
+
+
+// Gift opening
+
+
+function openGift(box){
+
+
+box.innerHTML="✨💜✨";
+
+
+document.getElementById("giftMessage")
+.innerHTML =
+"You found a little piece of my heart 💜";
+
+
+}
+
+
+
+
+
+
+
+
+
+// Click sparkle effect
+
 
 document.addEventListener(
 "click",
-function(e){
+function(event){
 
 
 let sparkle =
@@ -228,13 +290,22 @@ sparkle.innerHTML="✨";
 
 sparkle.style.position="fixed";
 
-sparkle.style.left=e.clientX+"px";
+sparkle.style.left=
+event.clientX+"px";
 
-sparkle.style.top=e.clientY+"px";
+
+sparkle.style.top=
+event.clientY+"px";
+
 
 sparkle.style.fontSize="25px";
 
+
 sparkle.style.pointerEvents="none";
+
+
+sparkle.style.zIndex="99";
+
 
 
 document.body.appendChild(sparkle);
