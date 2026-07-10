@@ -18,38 +18,18 @@
 
 <div class="stars"></div>
 
-
-<!-- Floating hearts -->
-
-<div class="heart-particles">
-<span>💜</span>
-<span>💗</span>
-<span>🤍</span>
-<span>💜</span>
-<span>💗</span>
-</div>
+<div class="shooting-star"></div>
 
 
 
-<!-- Cute guardians -->
+<div class="hud">
 
-<div class="guardian cat">
-🐱
-</div>
+<span id="levelDisplay">
+LEVEL 1 / 10
+</span>
 
-<div class="guardian dog">
-🐶
-</div>
-
-
-
-
-<!-- Progress -->
-
-<div class="progress">
-
-<span id="levelText">
-Level 1 / 10
+<span id="heartDisplay">
+💗 0 / 20
 </span>
 
 </div>
@@ -58,7 +38,23 @@ Level 1 / 10
 
 
 
-<div class="game">
+<div class="particles">
+
+<span>💜</span>
+<span>💗</span>
+<span>✨</span>
+<span>🤍</span>
+<span>💜</span>
+
+</div>
+
+
+
+
+
+
+
+<main id="game">
 
 
 
@@ -66,7 +62,14 @@ Level 1 / 10
 
 <!-- LEVEL 1 -->
 
-<section class="level active">
+<section class="scene active">
+
+
+<div class="character">
+
+🐱
+
+</div>
 
 
 <h1>
@@ -74,21 +77,27 @@ Level 1 / 10
 </h1>
 
 
-<p class="magic">
-✨ A little universe made only for you ✨
+<p class="subtitle">
+
+A magical adventure created
+just for you.
+
 </p>
 
 
 <p>
 
-Your adventure begins here...
+Your mission:
+
+Unlock every heart,
+memory, and secret.
 
 </p>
 
 
-<button onclick="nextLevel()">
+<button onclick="nextScene()">
 
-🎮 Start Quest
+🎮 Start Adventure
 
 </button>
 
@@ -106,15 +115,31 @@ Your adventure begins here...
 <!-- LEVEL 2 -->
 
 
-<section class="level">
+<section class="scene">
+
+
+<div class="envelope"
+onclick="openLetter()">
+
+💌
+
+</div>
 
 
 <h1>
-💌 A Letter From My Heart
+The Love Letter
 </h1>
 
 
-<div class="scroll">
+<p>
+
+A special message is waiting.
+
+</p>
+
+
+<div id="letterBox"
+class="hiddenBox">
 
 <p>
 
@@ -122,34 +147,29 @@ Happy Birthday, Jose. 💜
 
 <br><br>
 
-I wanted to create something more than
-just a message.
-
-I wanted to make a little world that
-shows how much you mean to me.
+I wanted to create something
+that shows how much you mean to me.
 
 <br><br>
 
-You have brought so many smiles,
-laughs, and beautiful moments into my life.
+You are someone who brings
+happiness into my life.
+
+The little conversations,
+the laughs, and the memories
+we create are things I treasure.
 
 <br><br>
 
-Every little conversation,
-every silly joke,
-and every memory with you means more
-than you know.
-
-<br><br>
-
-I love you so much.
+This is my little universe
+made for you.
 
 </p>
 
 </div>
 
 
-<button onclick="nextLevel()">
+<button onclick="nextScene()">
 
 ✨ Continue
 
@@ -166,11 +186,10 @@ I love you so much.
 
 
 
-
 <!-- LEVEL 3 -->
 
 
-<section class="level">
+<section class="scene">
 
 
 <h1>
@@ -178,35 +197,31 @@ I love you so much.
 </h1>
 
 
-<div class="scroll">
+
+<div class="string-animation">
+
+❤️━━━━━━❤️
+
+</div>
+
 
 
 <p>
 
-Have you heard of the red string theory?
+The red string theory says that
+two people who are meant to find
+each other are connected by an
+invisible string.
 
 <br><br>
 
-It is the idea that two people who are
-meant to find each other are connected
-by an invisible red string.
+Maybe our string was quietly
+guiding us toward each other.
 
 <br><br>
 
-The string may stretch,
-life may get complicated,
-but somehow it always leads those two
-people back together.
+Out of everyone in this world...
 
-<br><br>
-
-Sometimes I wonder if our string was
-quietly pulling us toward each other
-all along.
-
-<br><br>
-
-Because out of everyone in this world,
 we found each other.
 
 💜
@@ -214,11 +229,8 @@ we found each other.
 </p>
 
 
-</div>
 
-
-
-<button onclick="nextLevel()">
+<button onclick="nextScene()">
 
 🧵 Follow The String
 
@@ -238,7 +250,7 @@ we found each other.
 <!-- LEVEL 4 -->
 
 
-<section class="level">
+<section class="scene">
 
 
 <h1>
@@ -247,23 +259,27 @@ we found each other.
 
 
 <p>
-Collect all 20 hearts to unlock this level.
+
+Collect the hearts to unlock
+20 reasons why I love you.
+
 </p>
 
 
-<div id="heartGarden">
+<div id="garden">
 
 </div>
 
 
-<p id="heartCount">
-0 / 20 Hearts
-</p>
+<div id="reasonBox">
+
+</div>
 
 
-<button onclick="nextLevel()">
 
-✨ Continue
+<button onclick="nextScene()">
+
+🌸 Continue
 
 </button>
 
@@ -281,48 +297,38 @@ Collect all 20 hearts to unlock this level.
 <!-- LEVEL 5 -->
 
 
-<section class="level">
+<section class="scene">
 
 
 <h1>
-🎮 Our Gaming Memories
+🎮 Player Two
 </h1>
 
 
-<div class="scroll">
-
 <p>
 
-I really want to play more games with you.
+I hope we can play even more
+games together.
 
 <br><br>
-
-More adventures.
 
 More laughs.
 
-More moments where we forget everything
-else and just enjoy being together.
+More adventures.
+
+More random moments.
 
 <br><br>
 
-The game itself is fun...
-
-but playing with you makes it special.
-
-<br><br>
-
-I can't wait for all the memories we
-haven't created yet.
+Because the best part of any game
+is who you play it with.
 
 💜
 
 </p>
 
-</div>
 
-
-<button onclick="nextLevel()">
+<button onclick="nextScene()">
 
 🎵 Continue
 
@@ -342,7 +348,7 @@ haven't created yet.
 <!-- LEVEL 6 -->
 
 
-<section class="level">
+<section class="scene">
 
 
 <h1>
@@ -350,9 +356,9 @@ haven't created yet.
 </h1>
 
 
-<div class="music-box">
+<div class="music">
 
-🎶 💜 🎶
+🎶💜🎶
 
 </div>
 
@@ -373,8 +379,7 @@ Te adoro.
 </p>
 
 
-
-<button onclick="nextLevel()">
+<button onclick="nextScene()">
 
 🎁 Continue
 
@@ -394,7 +399,7 @@ Te adoro.
 <!-- LEVEL 7 -->
 
 
-<section class="level">
+<section class="scene">
 
 
 <h1>
@@ -402,38 +407,40 @@ Te adoro.
 </h1>
 
 
-<div class="gift">
+<div class="giftBox"
+onclick="openGift(this)">
 
-💌 Love Letter
-
-</div>
-
-
-<div class="gift">
-
-🎮 Gaming Memories
+🎁
 
 </div>
 
 
-<div class="gift">
+<div class="giftBox"
+onclick="openGift(this)">
 
-💗 20 Reasons
-
-</div>
-
-
-<div class="gift">
-
-🌙 Secret Gift
+🎁
 
 </div>
 
 
+<div class="giftBox"
+onclick="openGift(this)">
 
-<button onclick="nextLevel()">
+🎁
 
-🐱 Continue
+</div>
+
+
+<p id="giftMessage">
+
+Click the gifts...
+
+</p>
+
+
+<button onclick="nextScene()">
+
+🐶 Continue
 
 </button>
 
@@ -451,11 +458,11 @@ Te adoro.
 <!-- LEVEL 8 -->
 
 
-<section class="level">
+<section class="scene">
 
 
 <h1>
-🐱🐶 Pet Guardians
+🐱🐶 Guardian Friends
 </h1>
 
 
@@ -468,16 +475,20 @@ Te adoro.
 
 <p>
 
-The guardians have a message:
+🐱:
+"Jose, you found all the love!"
+
 
 <br><br>
 
-"Take care of each other's hearts forever."
+
+🐶:
+"Happy Birthday! Keep smiling!"
 
 </p>
 
 
-<button onclick="nextLevel()">
+<button onclick="nextScene()">
 
 🔐 Continue
 
@@ -497,7 +508,7 @@ The guardians have a message:
 <!-- LEVEL 9 -->
 
 
-<section class="level">
+<section class="scene">
 
 
 <h1>
@@ -507,20 +518,19 @@ The guardians have a message:
 
 <p>
 
-You found the secret.
+You discovered the secret.
 
 <br><br>
 
 Your reward:
 
-Knowing you are loved more than words
-can explain.
+Knowing someone loves
+and appreciates you deeply.
 
 </p>
 
 
-
-<button onclick="nextLevel()">
+<button onclick="nextScene()">
 
 💜 Final Level
 
@@ -540,7 +550,7 @@ can explain.
 <!-- LEVEL 10 -->
 
 
-<section class="level">
+<section class="scene">
 
 
 <h1>
@@ -554,12 +564,13 @@ Happy Birthday, Jose.
 
 <br><br>
 
-Thank you for being part of my story.
+Thank you for being part
+of my story.
 
 <br><br>
 
-My favorite adventure is the one
-where I get to know you.
+My favorite adventure is
+the one where I get to know you.
 
 <br><br>
 
@@ -570,13 +581,23 @@ I love you.
 </p>
 
 
+<div class="fireworks">
+
+💜✨💗✨💜
+
+</div>
+
+
 </section>
 
 
 
 
 
-</div>
+
+
+</main>
+
 
 
 
