@@ -1,4 +1,3 @@
-alert("HELLO JOSE QUEST 💜");
 let currentScene = 0;
 
 
