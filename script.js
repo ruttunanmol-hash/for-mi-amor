@@ -7,17 +7,46 @@ JAVASCRIPT PART 1
 
 // BUTTON: START OUR STORY 🧵
 
-function scrollToStory(){
+let currentScene = 0;
 
-    document
-    .getElementById("story")
-    .scrollIntoView({
 
-        behavior: "smooth"
+const scenes = document.querySelectorAll("section");
+
+
+function showScene(index){
+
+    scenes.forEach(scene => {
+
+        scene.classList.remove("active");
 
     });
 
+
+    scenes[index].classList.add("active");
+
 }
+
+
+
+function nextScene(){
+
+    if(currentScene < scenes.length - 1){
+
+        currentScene++;
+
+        showScene(currentScene);
+
+    }
+
+}
+
+
+
+window.onload = function(){
+
+    showScene(0);
+
+};
 
 
 
