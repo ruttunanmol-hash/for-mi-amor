@@ -1,788 +1,1030 @@
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:Georgia,serif;
+/* THE RED STRING THEORY */
+/* CSS PART 1: MAIN THEME */
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 
-body{
+body {
 
-min-height:100vh;
+    font-family: "Poppins", sans-serif;
 
-overflow:hidden;
+    background:
+    linear-gradient(
+        180deg,
+        #100018,
+        #26002f,
+        #140008
+    );
 
-background:
-linear-gradient(
-180deg,
-#080014,
-#251047,
-#61208c
-);
+    color: white;
 
-color:white;
+    text-align: center;
 
-display:flex;
+    overflow-x: hidden;
 
-justify-content:center;
+}
 
-align-items:center;
 
-text-align:center;
 
-}
+section {
 
+    min-height: 100vh;
 
+    padding: 80px 20px;
 
+    display: flex;
 
+    flex-direction: column;
 
-/* Galaxy */
+    justify-content: center;
 
-.stars{
+    align-items: center;
 
-position:fixed;
+}
+
 
-inset:0;
 
-background-image:
-radial-gradient(white 1px,transparent 1px);
+/* HEADINGS */
 
-background-size:45px 45px;
+h1 {
 
-opacity:.3;
+    font-size: 55px;
 
-animation:spaceMove 35s linear infinite;
+    color: #ff4d6d;
 
+    text-shadow:
+    0 0 20px rgba(255,77,109,0.8);
+
 }
 
 
 
-@keyframes spaceMove{
+h2 {
 
-from{
+    font-size: 38px;
 
-transform:translateY(0);
+    margin-bottom: 20px;
 
 }
 
-to{
 
-transform:translateY(300px);
 
-}
+h3 {
+
+    margin-bottom: 15px;
 
 }
 
 
 
+.subtitle {
 
+    max-width: 650px;
 
-/* Shooting star */
+    line-height: 1.8;
 
+    font-size: 18px;
 
-.shooting-star{
+    opacity: 0.85;
 
-position:fixed;
+}
 
-width:150px;
 
-height:2px;
 
-background:white;
+/* GLASS EFFECT CARDS */
 
-top:20%;
 
-left:-200px;
+.memory-card,
+.player-card,
+.music-card,
+.gift-card,
+.pets-card,
+.ending-card,
+.wish-box {
 
-animation:shoot 8s infinite;
 
-}
+    background:
 
+    rgba(255,255,255,0.07);
 
 
-@keyframes shoot{
+    backdrop-filter: blur(15px);
 
 
-0%{
+    border-radius: 25px;
 
-left:-200px;
 
-}
+    padding: 35px;
 
 
-50%{
+    border:
 
-left:100%;
+    1px solid rgba(255,255,255,0.15);
 
-}
 
+    box-shadow:
 
-100%{
+    0 0 35px rgba(255,40,90,0.25);
 
-left:100%;
 
 }
 
-}
 
 
+/* BUTTONS */
 
 
+button {
 
+    margin-top: 20px;
 
+    padding: 15px 35px;
 
-/* HUD */
+    border-radius: 50px;
 
+    border: none;
 
-.hud{
+    cursor: pointer;
 
-position:fixed;
+    color: white;
 
-top:20px;
+    font-size: 16px;
 
-left:50%;
+    background:
 
-transform:translateX(-50%);
+    linear-gradient(
+        45deg,
+        #ff1744,
+        #9c27ff
+    );
 
-background:#ffffff20;
 
-padding:12px 25px;
+    transition: 0.3s;
 
-border-radius:30px;
+}
+
 
-backdrop-filter:blur(10px);
 
-display:flex;
+button:hover {
 
-gap:30px;
+    transform: scale(1.08);
 
-z-index:10;
+    box-shadow:
 
+    0 0 25px #ff1744;
+
 }
 
 
 
+/* EMOJIS / ICONS */
 
 
+.game-icon,
+.music-icon,
+.gift-icon,
+.pets-icon,
+.ending-icon {
 
+    font-size: 70px;
 
-/* Game */
+    margin-bottom: 20px;
 
+}
 
-#game{
+/* CSS PART 2: MEMORY TIMELINE + RED STRING */
 
-width:90%;
 
-max-width:800px;
+/* MEMORY TIMELINE */
 
-position:relative;
+.timeline {
 
-z-index:5;
+    display: flex;
 
-}
+    flex-direction: column;
 
+    gap: 30px;
 
+    width: 90%;
 
+    max-width: 700px;
 
+    margin-top: 30px;
 
-.scene{
+}
+
+
+
+.memory-card {
 
-display:none;
+    position: relative;
 
-animation:enter .8s ease;
+    text-align: center;
 
+    animation: fadeUp 1s ease;
+
 }
+
 
 
+.memory-icon {
 
-.scene.active{
+    font-size: 45px;
 
-display:block;
+    margin-bottom: 15px;
 
 }
 
 
 
+.date {
 
+    display: inline-block;
 
-@keyframes enter{
+    margin-top: 15px;
 
-from{
+    color: #ff6b8a;
 
-opacity:0;
+    font-size: 14px;
 
-transform:scale(.8);
+    letter-spacing: 2px;
 
 }
 
 
-to{
 
-opacity:1;
+/* RED STRING LINE */
 
-transform:scale(1);
 
-}
+.timeline::before {
 
-}
+    content: "";
+
+    position: absolute;
 
+    width: 3px;
 
+    height: 70%;
 
+    background:
 
+    linear-gradient(
+        to bottom,
+        #ff1744,
+        #ff6b8a
+    );
 
 
+    left: 50%;
 
+    transform: translateX(-50%);
 
+    z-index: -1;
 
-h1{
+}
+
+
+
+
 
-font-size:3rem;
+/* WISH BOX */
 
-margin-bottom:25px;
 
-text-shadow:
-0 0 15px #e9d5ff,
-0 0 35px #c084fc;
+.wish-box {
 
+    margin-top: 50px;
+
+    max-width: 600px;
+
 }
 
 
 
-p{
+.wish-box h3 {
 
-font-size:1.2rem;
+    color: #ff6b8a;
 
-line-height:1.8;
+    font-size: 28px;
 
 }
 
 
 
+/* HEART GARDEN */
 
 
+.garden {
 
-.subtitle{
+    display: flex;
 
-font-size:1.5rem;
+    justify-content: center;
 
-animation:glow 2s infinite;
+    gap: 25px;
 
+    flex-wrap: wrap;
+
+    margin: 40px 0;
+
 }
 
 
 
+.flower {
 
-@keyframes glow{
+    font-size: 60px;
 
-50%{
+    animation:
 
-text-shadow:0 0 25px #f0abfc;
+    float 3s infinite ease-in-out;
 
 }
 
-}
 
 
+.flower:nth-child(even){
 
+    animation-delay: 1s;
 
+}
+
+
+
+/* FLOATING HEARTS */
 
 
+.floating-hearts span {
 
-button{
+    display: inline-block;
 
-margin-top:35px;
+    font-size: 35px;
 
-padding:18px 50px;
+    margin: 15px;
 
-border:none;
+    cursor: pointer;
 
-border-radius:50px;
+    animation:
 
-background:#a855f7;
+    float 2s infinite ease-in-out;
 
-color:white;
+}
 
-font-size:1.1rem;
 
-cursor:pointer;
 
-box-shadow:
-0 0 30px #c084fc;
+.floating-hearts span:hover {
 
-transition:.3s;
+    transform: scale(1.3);
 
 }
+
 
 
+.heart-message {
 
-button:hover{
+    margin-top: 30px;
 
-transform:scale(1.1);
+    max-width: 500px;
 
 }
 
 
 
+/* ANIMATIONS */
 
 
+@keyframes float {
 
+    0% {
 
+        transform: translateY(0px);
 
-/* Floating particles */
+    }
 
 
-.particles span{
+    50% {
 
-position:fixed;
+        transform: translateY(-15px);
 
-bottom:-50px;
+    }
 
-font-size:35px;
 
-animation:float 8s infinite;
+    100% {
 
+        transform: translateY(0px);
+
+    }
+
 }
 
 
 
-.particles span:nth-child(1){
+@keyframes fadeUp {
 
-left:10%;
+    from {
 
-}
+        opacity: 0;
 
+        transform: translateY(40px);
 
-.particles span:nth-child(2){
+    }
 
-left:30%;
 
-animation-delay:2s;
+    to {
 
+        opacity: 1;
+
+        transform: translateY(0);
+
+    }
+
 }
 
+/* CSS PART 3: PLAYER TWO + MUSIC + GIFTS */
 
-.particles span:nth-child(3){
 
-left:60%;
+/* PLAYER TWO */
 
-animation-delay:4s;
 
-}
+.stats {
+
+    display: flex;
 
+    justify-content: center;
 
-.particles span:nth-child(4){
+    gap: 20px;
 
-left:80%;
+    flex-wrap: wrap;
 
-animation-delay:1s;
+    margin: 35px 0;
 
 }
 
 
-.particles span:nth-child(5){
 
-left:50%;
+.stat-box {
 
-animation-delay:5s;
+    background:
 
-}
+    rgba(255,255,255,0.08);
 
 
+    padding: 20px;
 
+    border-radius: 20px;
 
-@keyframes float{
+    width: 150px;
 
-0%{
 
-transform:translateY(0);
+    border:
 
-opacity:0;
+    1px solid rgba(255,255,255,0.15);
 
 }
+
 
 
-40%{
+.stat-box h3 {
 
-opacity:1;
+    font-size: 35px;
 
+    color: #ff6b8a;
+
 }
 
 
-100%{
 
-transform:translateY(-900px);
+.level-box {
 
-opacity:0;
+    margin-top: 30px;
 
 }
+
+
 
+.level-bar {
+
+    width: 100%;
+
+    height: 25px;
+
+    background:
+
+    rgba(255,255,255,0.15);
+
+
+    border-radius: 50px;
+
+    overflow: hidden;
+
+    margin: 20px 0;
+
 }
+
 
 
+.level-progress {
 
+    height: 100%;
 
+    width: 100%;
 
+    display: flex;
 
+    justify-content: center;
 
+    align-items: center;
 
 
-/* Cat */
+    background:
 
-.character{
+    linear-gradient(
+        90deg,
+        #ff1744,
+        #ff80ab
+    );
 
-font-size:90px;
 
-animation:bounce 2s infinite;
+    border-radius: 50px;
 
+    font-size: 13px;
+
 }
 
 
 
-@keyframes bounce{
+.message-box {
 
-50%{
+    margin-top: 35px;
 
-transform:translateY(-20px);
+    line-height: 1.8;
 
 }
 
-}
 
 
+/* MUSIC ROOM */
 
 
+.song-box {
 
+    margin-top: 30px;
 
+    padding: 30px;
 
 
+    background:
 
-/* Envelope */
+    rgba(255,255,255,0.06);
 
 
-.envelope{
+    border-radius: 25px;
 
-font-size:100px;
+}
 
-cursor:pointer;
 
-animation:pulse 2s infinite;
 
-}
+.song-box h3 {
+
+    font-size: 30px;
 
+    color: #ff6b8a;
 
+}
 
 
-@keyframes pulse{
 
-50%{
+#musicMessage {
 
-transform:scale(1.2);
+    margin-top: 20px;
 
-}
+    color: #ffd1dc;
 
 }
 
 
 
+/* MUSIC NOTES */
 
 
-.hiddenBox{
+.music-notes span {
 
-display:none;
+    display: inline-block;
 
-background:#ffffff15;
+    font-size: 40px;
 
-padding:30px;
+    margin: 20px;
 
-border-radius:25px;
 
-border:1px solid #e9d5ff;
+    animation:
 
-margin-top:20px;
+    float 2s infinite;
 
 }
 
 
 
+.music-notes span:nth-child(2){
 
+    animation-delay: .5s;
 
-.show{
+}
 
-display:block;
 
-animation:enter .8s;
 
-}
+.music-notes span:nth-child(3){
 
+    animation-delay: 1s;
 
+}
 
 
 
 
 
+/* GIFT ROOM */
 
 
-/* Red string */
+.gifts-container {
 
+    display: flex;
 
-.string-animation{
+    justify-content: center;
 
-font-size:40px;
+    gap: 30px;
 
-color:#ff5c8a;
+    flex-wrap: wrap;
 
-animation:stringGlow 2s infinite;
+    margin-top: 40px;
 
 }
 
 
 
-@keyframes stringGlow{
+.gift {
 
-50%{
+    cursor: pointer;
 
-filter:drop-shadow(0 0 20px pink);
+    transition: .3s;
 
 }
 
+
+
+.gift:hover {
+
+    transform: translateY(-10px);
+
 }
 
 
 
+.gift-box {
 
+    font-size: 75px;
 
+    filter:
 
+    drop-shadow(
+    0 0 15px #ff1744
+    );
 
+}
+
 
-/* Heart Garden */
 
+.gift h3 {
 
-#garden{
+    margin-top: 15px;
 
-margin-top:30px;
+    color: #ff9bb5;
 
 }
+
+
+
+.gift-message {
 
+    margin-top: 40px;
 
+    font-size: 18px;
 
-.heart{
+    line-height: 1.7;
 
-display:inline-flex;
+}
 
-justify-content:center;
+/* CSS PART 4: GUARDIAN PETS + ENDING */
 
-align-items:center;
 
-width:70px;
+/* GUARDIAN PETS */
 
-height:70px;
 
-background:#ec4899;
+.pets-container {
 
-border-radius:50%;
+    display: flex;
 
-margin:10px;
+    justify-content: center;
 
-font-size:30px;
+    gap: 30px;
 
-cursor:pointer;
+    flex-wrap: wrap;
 
-animation:heartBounce 2s infinite;
+    margin-top: 40px;
 
 }
 
 
 
-@keyframes heartBounce{
+.pet {
 
-50%{
+    width: 200px;
 
-transform:translateY(-15px);
+    padding: 25px;
 
-}
+
+    background:
+
+    rgba(255,255,255,0.07);
+
+
+    border-radius: 25px;
+
+
+    cursor: pointer;
+
+
+    transition: .3s;
 
+
+    border:
+
+    1px solid rgba(255,255,255,0.15);
+
 }
+
 
 
+.pet:hover {
 
+    transform: translateY(-12px);
 
+    box-shadow:
 
+    0 0 25px rgba(255,80,120,0.5);
 
+}
 
-#reasonBox{
 
-margin-top:20px;
 
-background:#ffffff15;
+.pet-image {
 
-padding:20px;
+    font-size: 70px;
 
-border-radius:20px;
+    margin-bottom: 15px;
 
 }
+
 
 
+.pet h3 {
 
+    color: #ff8fab;
 
+}
 
 
 
-/* Music */
+.pet-message {
 
+    margin-top: 40px;
 
-.music{
+    font-size: 18px;
 
-font-size:90px;
+    max-width: 550px;
 
-animation:pulse 2s infinite;
+    line-height: 1.8;
 
 }
 
 
 
+/* FINAL LETTER */
 
 
+.final-letter {
 
+    display: none;
 
-/* Gifts */
+    margin-top: 35px;
 
 
-.giftBox{
+    padding: 35px;
 
-font-size:80px;
 
-display:inline-block;
+    max-width: 650px;
 
-margin:20px;
 
-cursor:pointer;
+    background:
 
-animation:bounce 2s infinite;
+    rgba(255,255,255,0.08);
 
-}
+
+    border-radius: 25px;
 
 
+    line-height: 1.9;
 
-.giftBox:hover{
 
-transform:scale(1.2);
+    animation:
 
+    fadeUp 1s ease;
+
 }
+
 
 
+.final-letter h3 {
 
+    color:
 
+    #ff6b8a;
 
-/* Pets */
+
+    font-size: 30px;
+
+}
 
 
-.pets{
 
-font-size:100px;
+.final-letter p {
 
-animation:bounce 2s infinite;
+    margin: 20px 0;
 
 }
 
 
 
+/* FIREWORK HEART EFFECT */
 
 
+.fireworks span {
 
+    display: inline-block;
 
-.fireworks{
+    font-size: 35px;
 
-font-size:40px;
+    margin: 20px;
 
-margin-top:30px;
 
-animation:pulse 2s infinite;
+    animation:
 
+    pulse 2s infinite;
+
 }
 
 
 
+.fireworks span:nth-child(2){
 
+    animation-delay: .5s;
 
-@media(max-width:600px){
+}
 
 
-h1{
+.fireworks span:nth-child(3){
 
-font-size:2rem;
+    animation-delay: 1s;
 
 }
 
 
-p{
 
-font-size:1rem;
+/* RED STRING GLOW */
 
-}
 
+.ending-card::before {
 
-.giftBox{
+    content: "";
 
-font-size:60px;
+    position: absolute;
 
-}
+    width: 150px;
+
+    height: 150px;
 
 
+    background:
+
+    rgba(255,0,70,0.35);
+
+
+    filter: blur(70px);
+
+
+    z-index: -1;
+
 }
-/* CINEMATIC TRANSITION */
 
-.scene.exit{
 
-animation:exitScene .5s forwards;
 
+.ending-card {
+
+    position: relative;
+
 }
 
 
-@keyframes exitScene{
 
-from{
+/* SECRET MAGIC EFFECT */
 
-opacity:1;
 
-transform:scale(1);
+section::after {
 
-}
+    content: "🧵";
 
-to{
+    position: absolute;
 
-opacity:0;
+    font-size: 25px;
 
-transform:scale(.7);
+    opacity: .15;
 
-}
+    animation:
+
+    float 5s infinite ease-in-out;
 
 }
 
 
-.unlock{
 
-animation:unlock .8s ease;
+@keyframes pulse {
 
-}
+    0% {
 
+        transform: scale(1);
 
-@keyframes unlock{
+    }
 
-0%{
 
-opacity:0;
+    50% {
 
-transform:translateY(40px) scale(.8);
+        transform: scale(1.25);
 
-}
+    }
 
 
-100%{
+    100% {
 
-opacity:1;
+        transform: scale(1);
 
-transform:translateY(0) scale(1);
+    }
 
 }
+
+
+
+/* MOBILE DESIGN */
+
+
+@media(max-width:700px){
+
+
+    h1 {
+
+        font-size: 40px;
+
+    }
+
+
+    h2 {
+
+        font-size: 30px;
+
+    }
+
+
+    .stats {
+
+        flex-direction: column;
+
+        align-items: center;
+
+    }
+
+
+    .stat-box {
+
+        width: 80%;
+
+    }
+
+
+    .timeline::before {
+
+        display: none;
+
+    }
 
 }
