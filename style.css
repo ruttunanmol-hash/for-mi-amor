@@ -2,7 +2,7 @@
 margin:0;
 padding:0;
 box-sizing:border-box;
-font-family:"Georgia",serif;
+font-family:Georgia,serif;
 }
 
 
@@ -10,17 +10,17 @@ body{
 
 min-height:100vh;
 
+overflow:hidden;
+
 background:
 linear-gradient(
 180deg,
-#10051d,
-#251044,
-#542080
+#080014,
+#251047,
+#61208c
 );
 
 color:white;
-
-overflow-x:hidden;
 
 display:flex;
 
@@ -36,7 +36,7 @@ text-align:center;
 
 
 
-/* STAR GALAXY */
+/* Galaxy */
 
 .stars{
 
@@ -51,13 +51,13 @@ background-size:45px 45px;
 
 opacity:.3;
 
-animation:starsMove 40s linear infinite;
+animation:spaceMove 35s linear infinite;
 
 }
 
 
 
-@keyframes starsMove{
+@keyframes spaceMove{
 
 from{
 
@@ -77,12 +77,261 @@ transform:translateY(300px);
 
 
 
+/* Shooting star */
 
 
-/* HEART PARTICLES */
+.shooting-star{
+
+position:fixed;
+
+width:150px;
+
+height:2px;
+
+background:white;
+
+top:20%;
+
+left:-200px;
+
+animation:shoot 8s infinite;
+
+}
 
 
-.heart-particles span{
+
+@keyframes shoot{
+
+
+0%{
+
+left:-200px;
+
+}
+
+
+50%{
+
+left:100%;
+
+}
+
+
+100%{
+
+left:100%;
+
+}
+
+}
+
+
+
+
+
+
+
+/* HUD */
+
+
+.hud{
+
+position:fixed;
+
+top:20px;
+
+left:50%;
+
+transform:translateX(-50%);
+
+background:#ffffff20;
+
+padding:12px 25px;
+
+border-radius:30px;
+
+backdrop-filter:blur(10px);
+
+display:flex;
+
+gap:30px;
+
+z-index:10;
+
+}
+
+
+
+
+
+
+
+/* Game */
+
+
+#game{
+
+width:90%;
+
+max-width:800px;
+
+position:relative;
+
+z-index:5;
+
+}
+
+
+
+
+
+.scene{
+
+display:none;
+
+animation:enter .8s ease;
+
+}
+
+
+
+.scene.active{
+
+display:block;
+
+}
+
+
+
+
+
+@keyframes enter{
+
+from{
+
+opacity:0;
+
+transform:scale(.8);
+
+}
+
+
+to{
+
+opacity:1;
+
+transform:scale(1);
+
+}
+
+}
+
+
+
+
+
+
+
+
+
+h1{
+
+font-size:3rem;
+
+margin-bottom:25px;
+
+text-shadow:
+0 0 15px #e9d5ff,
+0 0 35px #c084fc;
+
+}
+
+
+
+p{
+
+font-size:1.2rem;
+
+line-height:1.8;
+
+}
+
+
+
+
+
+
+.subtitle{
+
+font-size:1.5rem;
+
+animation:glow 2s infinite;
+
+}
+
+
+
+
+@keyframes glow{
+
+50%{
+
+text-shadow:0 0 25px #f0abfc;
+
+}
+
+}
+
+
+
+
+
+
+
+button{
+
+margin-top:35px;
+
+padding:18px 50px;
+
+border:none;
+
+border-radius:50px;
+
+background:#a855f7;
+
+color:white;
+
+font-size:1.1rem;
+
+cursor:pointer;
+
+box-shadow:
+0 0 30px #c084fc;
+
+transition:.3s;
+
+}
+
+
+
+button:hover{
+
+transform:scale(1.1);
+
+}
+
+
+
+
+
+
+
+
+/* Floating particles */
+
+
+.particles span{
 
 position:fixed;
 
@@ -90,22 +339,20 @@ bottom:-50px;
 
 font-size:35px;
 
-animation:heartFloat 8s infinite;
-
-opacity:.8;
+animation:float 8s infinite;
 
 }
 
 
 
-.heart-particles span:nth-child(1){
+.particles span:nth-child(1){
 
 left:10%;
 
 }
 
 
-.heart-particles span:nth-child(2){
+.particles span:nth-child(2){
 
 left:30%;
 
@@ -114,27 +361,27 @@ animation-delay:2s;
 }
 
 
-.heart-particles span:nth-child(3){
+.particles span:nth-child(3){
 
-left:55%;
+left:60%;
 
 animation-delay:4s;
 
 }
 
 
-.heart-particles span:nth-child(4){
+.particles span:nth-child(4){
 
-left:75%;
+left:80%;
 
 animation-delay:1s;
 
 }
 
 
-.heart-particles span:nth-child(5){
+.particles span:nth-child(5){
 
-left:90%;
+left:50%;
 
 animation-delay:5s;
 
@@ -143,8 +390,7 @@ animation-delay:5s;
 
 
 
-@keyframes heartFloat{
-
+@keyframes float{
 
 0%{
 
@@ -155,7 +401,7 @@ opacity:0;
 }
 
 
-30%{
+40%{
 
 opacity:1;
 
@@ -170,7 +416,6 @@ opacity:0;
 
 }
 
-
 }
 
 
@@ -181,39 +426,13 @@ opacity:0;
 
 
 
-/* PET GUARDIANS */
+/* Cat */
 
+.character{
 
-.guardian{
+font-size:90px;
 
-position:fixed;
-
-font-size:70px;
-
-z-index:3;
-
-animation:bounce 3s infinite;
-
-}
-
-
-
-.cat{
-
-bottom:35px;
-
-left:35px;
-
-}
-
-
-.dog{
-
-bottom:35px;
-
-right:35px;
-
-animation-delay:1s;
+animation:bounce 2s infinite;
 
 }
 
@@ -237,308 +456,19 @@ transform:translateY(-20px);
 
 
 
-/* LEVELS */
+/* Envelope */
 
 
-.game{
+.envelope{
 
-width:90%;
-
-max-width:800px;
-
-position:relative;
-
-z-index:5;
-
-}
-
-
-
-.level{
-
-display:none;
-
-animation:fade .8s;
-
-}
-
-
-.level.active{
-
-display:block;
-
-}
-
-
-
-@keyframes fade{
-
-from{
-
-opacity:0;
-
-transform:translateY(40px);
-
-}
-
-
-to{
-
-opacity:1;
-
-transform:translateY(0);
-
-}
-
-}
-
-
-
-
-
-
-
-
-
-
-/* TEXT */
-
-
-h1{
-
-font-size:3rem;
-
-margin-bottom:25px;
-
-text-shadow:
-0 0 15px #d8a4ff,
-0 0 35px #b86dff;
-
-}
-
-
-
-p{
-
-font-size:1.15rem;
-
-line-height:1.9;
-
-}
-
-
-
-
-
-
-.magic{
-
-font-size:1.4rem;
-
-animation:glow 2s infinite;
-
-}
-
-
-
-@keyframes glow{
-
-50%{
-
-text-shadow:0 0 20px #e0b3ff;
-
-}
-
-}
-
-
-
-
-
-
-
-
-/* BUTTONS */
-
-
-button{
-
-margin-top:35px;
-
-padding:18px 50px;
-
-border:none;
-
-border-radius:50px;
-
-background:#a855f7;
-
-color:white;
-
-font-size:1.1rem;
+font-size:100px;
 
 cursor:pointer;
-
-transition:.3s;
-
-box-shadow:
-0 0 20px #c084fc;
-
-}
-
-
-
-button:hover{
-
-transform:scale(1.1);
-
-box-shadow:
-0 0 40px #e9d5ff;
-
-}
-
-
-
-
-
-
-
-
-
-/* PROGRESS */
-
-
-.progress{
-
-position:fixed;
-
-top:20px;
-
-right:20px;
-
-background:#ffffff20;
-
-padding:12px 25px;
-
-border-radius:30px;
-
-backdrop-filter:blur(10px);
-
-z-index:10;
-
-}
-
-
-
-
-
-
-
-
-/* LETTER SCROLL */
-
-
-.scroll{
-
-background:#ffffff15;
-
-padding:30px;
-
-border-radius:25px;
-
-border:1px solid #d8a4ff;
-
-max-height:450px;
-
-overflow:auto;
-
-}
-
-
-
-
-
-
-
-
-
-/* HEART GARDEN */
-
-
-#heartGarden{
-
-margin-top:30px;
-
-}
-
-
-
-.love-heart{
-
-display:inline-flex;
-
-align-items:center;
-
-justify-content:center;
-
-width:70px;
-
-height:70px;
-
-background:#ec4899;
-
-border-radius:50%;
-
-margin:10px;
-
-font-size:30px;
-
-cursor:pointer;
-
-animation:bubble 2s infinite;
-
-box-shadow:0 0 20px #f472b6;
-
-}
-
-
-
-.love-heart:hover{
-
-transform:scale(1.3);
-
-}
-
-
-
-@keyframes bubble{
-
-50%{
-
-transform:translateY(-15px);
-
-}
-
-}
-
-
-
-
-
-
-
-
-
-/* MUSIC */
-
-
-.music-box{
-
-font-size:80px;
 
 animation:pulse 2s infinite;
 
 }
+
 
 
 
@@ -556,37 +486,120 @@ transform:scale(1.2);
 
 
 
+.hiddenBox{
 
-
-
-/* GIFTS */
-
-
-.gift{
+display:none;
 
 background:#ffffff15;
 
-padding:25px;
-
-margin:20px;
+padding:30px;
 
 border-radius:25px;
 
-border:1px solid #d8a4ff;
+border:1px solid #e9d5ff;
+
+margin-top:20px;
+
+}
+
+
+
+
+
+.show{
+
+display:block;
+
+animation:enter .8s;
+
+}
+
+
+
+
+
+
+
+
+
+/* Red string */
+
+
+.string-animation{
+
+font-size:40px;
+
+color:#ff5c8a;
+
+animation:stringGlow 2s infinite;
+
+}
+
+
+
+@keyframes stringGlow{
+
+50%{
+
+filter:drop-shadow(0 0 20px pink);
+
+}
+
+}
+
+
+
+
+
+
+
+
+/* Heart Garden */
+
+
+#garden{
+
+margin-top:30px;
+
+}
+
+
+
+.heart{
+
+display:inline-flex;
+
+justify-content:center;
+
+align-items:center;
+
+width:70px;
+
+height:70px;
+
+background:#ec4899;
+
+border-radius:50%;
+
+margin:10px;
+
+font-size:30px;
 
 cursor:pointer;
 
-transition:.4s;
+animation:heartBounce 2s infinite;
 
 }
 
 
 
-.gift:hover{
+@keyframes heartBounce{
 
-transform:translateY(-10px);
+50%{
 
-box-shadow:0 0 30px #c084fc;
+transform:translateY(-15px);
+
+}
 
 }
 
@@ -596,12 +609,53 @@ box-shadow:0 0 30px #c084fc;
 
 
 
+#reasonBox{
 
-.pets{
+margin-top:20px;
+
+background:#ffffff15;
+
+padding:20px;
+
+border-radius:20px;
+
+}
+
+
+
+
+
+
+
+/* Music */
+
+
+.music{
 
 font-size:90px;
 
-margin:40px;
+animation:pulse 2s infinite;
+
+}
+
+
+
+
+
+
+
+/* Gifts */
+
+
+.giftBox{
+
+font-size:80px;
+
+display:inline-block;
+
+margin:20px;
+
+cursor:pointer;
 
 animation:bounce 2s infinite;
 
@@ -609,6 +663,42 @@ animation:bounce 2s infinite;
 
 
 
+.giftBox:hover{
+
+transform:scale(1.2);
+
+}
+
+
+
+
+
+/* Pets */
+
+
+.pets{
+
+font-size:100px;
+
+animation:bounce 2s infinite;
+
+}
+
+
+
+
+
+
+
+.fireworks{
+
+font-size:40px;
+
+margin-top:30px;
+
+animation:pulse 2s infinite;
+
+}
 
 
 
@@ -631,9 +721,9 @@ font-size:1rem;
 }
 
 
-.guardian{
+.giftBox{
 
-font-size:45px;
+font-size:60px;
 
 }
 
