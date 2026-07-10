@@ -6,7 +6,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>For Mi Amor 💜</title>
+<title>Jose's Birthday Quest 💜</title>
 
 <link rel="stylesheet" href="style.css">
 
@@ -19,34 +19,79 @@
 <div class="stars"></div>
 
 
-<div class="floating-hearts">
-    <span>💜</span>
-    <span>💗</span>
-    <span>🤍</span>
-    <span>💜</span>
+<!-- Floating hearts -->
+
+<div class="heart-particles">
+<span>💜</span>
+<span>💗</span>
+<span>🤍</span>
+<span>💜</span>
+<span>💗</span>
 </div>
+
+
+
+<!-- Cute guardians -->
+
+<div class="guardian cat">
+🐱
+</div>
+
+<div class="guardian dog">
+🐶
+</div>
+
+
+
+
+<!-- Progress -->
+
+<div class="progress">
+
+<span id="levelText">
+Level 1 / 10
+</span>
+
+</div>
+
+
 
 
 
 <div class="game">
 
 
-<!-- PAGE 1 -->
 
-<section class="page active" id="page1">
 
-<h1>Happy Birthday, Jose 💜</h1>
 
-<p class="heart">🤍</p>
+<!-- LEVEL 1 -->
 
-<p>
-I made a little adventure
-just for you.
+<section class="level active">
+
+
+<h1>
+💜 Jose's Birthday Quest 💜
+</h1>
+
+
+<p class="magic">
+✨ A little universe made only for you ✨
 </p>
 
-<button onclick="nextPage()">
-🎁 Start Adventure
+
+<p>
+
+Your adventure begins here...
+
+</p>
+
+
+<button onclick="nextLevel()">
+
+🎮 Start Quest
+
 </button>
+
 
 </section>
 
@@ -54,11 +99,22 @@ just for you.
 
 
 
-<!-- PAGE 2 -->
 
-<section class="page" id="page2">
 
-<h1>💌 A Letter For You</h1>
+
+
+<!-- LEVEL 2 -->
+
+
+<section class="level">
+
+
+<h1>
+💌 A Letter From My Heart
+</h1>
+
+
+<div class="scroll">
 
 <p>
 
@@ -66,78 +122,108 @@ Happy Birthday, Jose. 💜
 
 <br><br>
 
-I don’t think words will ever be enough to explain
-how much you mean to me.
+I wanted to create something more than
+just a message.
+
+I wanted to make a little world that
+shows how much you mean to me.
 
 <br><br>
 
-Since you came into my life, you made ordinary
-moments feel special.
+You have brought so many smiles,
+laughs, and beautiful moments into my life.
 
 <br><br>
 
-I believe in the red string theory —
-that two people who are meant to find each other
-are connected by an invisible string.
+Every little conversation,
+every silly joke,
+and every memory with you means more
+than you know.
 
 <br><br>
 
-Maybe that string was always leading me to you.
+I love you so much.
 
-Out of everyone in this world,
-our paths crossed, and I’m so thankful they did.
-
-<br><br>
-
-Thank you for making me smile,
-laugh, and feel loved.
-
-</p>
-
-
-<button onclick="nextPage()">
-✨ Continue
-</button>
-
-</section>
-
-
-
-
-
-
-<!-- PAGE 3 -->
-
-<section class="page" id="page3">
-
-<h1>📖 Our Story</h1>
-
-
-<div class="card">
-
-<h2>March 14 💜</h2>
-
-<p>
-The day we met.
 </p>
 
 </div>
 
 
-<div class="card">
+<button onclick="nextLevel()">
 
-<h2>March 16 🤍</h2>
+✨ Continue
+
+</button>
+
+
+</section>
+
+
+
+
+
+
+
+
+
+
+<!-- LEVEL 3 -->
+
+
+<section class="level">
+
+
+<h1>
+🧵 The Red String Of Fate
+</h1>
+
+
+<div class="scroll">
+
 
 <p>
-The day you said yes.
+
+Have you heard of the red string theory?
+
+<br><br>
+
+It is the idea that two people who are
+meant to find each other are connected
+by an invisible red string.
+
+<br><br>
+
+The string may stretch,
+life may get complicated,
+but somehow it always leads those two
+people back together.
+
+<br><br>
+
+Sometimes I wonder if our string was
+quietly pulling us toward each other
+all along.
+
+<br><br>
+
+Because out of everyone in this world,
+we found each other.
+
+💜
+
 </p>
+
 
 </div>
 
 
-<button onclick="nextPage()">
-💗 Continue
+
+<button onclick="nextLevel()">
+
+🧵 Follow The String
+
 </button>
+
 
 </section>
 
@@ -146,23 +232,41 @@ The day you said yes.
 
 
 
-<!-- PAGE 4 -->
 
-<section class="page" id="page4">
 
-<h1>💗 20 Reasons Why I Love You</h1>
+
+<!-- LEVEL 4 -->
+
+
+<section class="level">
+
+
+<h1>
+💗 Heart Garden
+</h1>
+
 
 <p>
-Click the hearts to unlock them.
+Collect all 20 hearts to unlock this level.
 </p>
 
 
-<div id="heartContainer"></div>
+<div id="heartGarden">
+
+</div>
 
 
-<button onclick="nextPage()">
+<p id="heartCount">
+0 / 20 Hearts
+</p>
+
+
+<button onclick="nextLevel()">
+
 ✨ Continue
+
 </button>
+
 
 </section>
 
@@ -172,12 +276,20 @@ Click the hearts to unlock them.
 
 
 
-<!-- PAGE 5 -->
 
-<section class="page" id="page5">
 
-<h1>🎮 Our Gaming Memories</h1>
+<!-- LEVEL 5 -->
 
+
+<section class="level">
+
+
+<h1>
+🎮 Our Gaming Memories
+</h1>
+
+
+<div class="scroll">
 
 <p>
 
@@ -185,22 +297,37 @@ I really want to play more games with you.
 
 <br><br>
 
-More laughs.
 More adventures.
-More moments where we forget everything else
-and just enjoy being together.
+
+More laughs.
+
+More moments where we forget everything
+else and just enjoy being together.
 
 <br><br>
 
-The game is fun,
+The game itself is fun...
+
 but playing with you makes it special.
+
+<br><br>
+
+I can't wait for all the memories we
+haven't created yet.
+
+💜
 
 </p>
 
+</div>
 
-<button onclick="nextPage()">
+
+<button onclick="nextLevel()">
+
 🎵 Continue
+
 </button>
+
 
 </section>
 
@@ -209,17 +336,31 @@ but playing with you makes it special.
 
 
 
-<!-- PAGE 6 -->
 
-<section class="page" id="page6">
 
-<h1>🎵 Te Adoro</h1>
+
+<!-- LEVEL 6 -->
+
+
+<section class="level">
+
+
+<h1>
+🎵 Te Adoro
+</h1>
+
+
+<div class="music-box">
+
+🎶 💜 🎶
+
+</div>
 
 
 <p>
 
-Some songs become special because of
-the person they remind us of.
+Some songs become special because
+of the person they remind us of.
 
 <br><br>
 
@@ -227,14 +368,18 @@ This song reminds me of you.
 
 <br><br>
 
-Te adoro. 💜
+Te adoro.
 
 </p>
 
 
-<button onclick="nextPage()">
+
+<button onclick="nextLevel()">
+
 🎁 Continue
+
 </button>
+
 
 </section>
 
@@ -243,29 +388,55 @@ Te adoro. 💜
 
 
 
-<!-- PAGE 7 -->
-
-<section class="page" id="page7">
-
-<h1>🎁 Gift Room</h1>
 
 
-<div class="card gift">
+
+<!-- LEVEL 7 -->
+
+
+<section class="level">
+
+
+<h1>
+🎁 Gift Room
+</h1>
+
+
+<div class="gift">
+
 💌 Love Letter
+
 </div>
 
-<div class="card gift">
+
+<div class="gift">
+
 🎮 Gaming Memories
-</div>
 
-<div class="card gift">
-💗 My Reasons
 </div>
 
 
-<button onclick="nextPage()">
+<div class="gift">
+
+💗 20 Reasons
+
+</div>
+
+
+<div class="gift">
+
+🌙 Secret Gift
+
+</div>
+
+
+
+<button onclick="nextLevel()">
+
 🐱 Continue
+
 </button>
+
 
 </section>
 
@@ -274,29 +445,44 @@ Te adoro. 💜
 
 
 
-<!-- PAGE 8 -->
 
-<section class="page" id="page8">
 
-<h1>🐱🐶 Cute Corner</h1>
+
+<!-- LEVEL 8 -->
+
+
+<section class="level">
+
+
+<h1>
+🐱🐶 Pet Guardians
+</h1>
+
 
 <div class="pets">
 
-🐱 💜 🐶
+🐱💜🐶
 
 </div>
 
 
 <p>
 
-A little reminder that you are loved.
+The guardians have a message:
+
+<br><br>
+
+"Take care of each other's hearts forever."
 
 </p>
 
 
-<button onclick="nextPage()">
-🌙 Continue
+<button onclick="nextLevel()">
+
+🔐 Continue
+
 </button>
+
 
 </section>
 
@@ -305,27 +491,41 @@ A little reminder that you are loved.
 
 
 
-<!-- PAGE 9 -->
 
-<section class="page" id="page9">
 
-<h1>🌙 Secret Level</h1>
+
+<!-- LEVEL 9 -->
+
+
+<section class="level">
+
+
+<h1>
+🔐 Secret Level
+</h1>
 
 
 <p>
 
-You unlocked a secret:
+You found the secret.
 
 <br><br>
 
-You are one of my favorite parts of life.
+Your reward:
+
+Knowing you are loved more than words
+can explain.
 
 </p>
 
 
-<button onclick="nextPage()">
+
+<button onclick="nextLevel()">
+
 💜 Final Level
+
 </button>
+
 
 </section>
 
@@ -335,9 +535,12 @@ You are one of my favorite parts of life.
 
 
 
-<!-- PAGE 10 -->
 
-<section class="page" id="page10">
+
+<!-- LEVEL 10 -->
+
+
+<section class="level">
 
 
 <h1>
@@ -351,16 +554,25 @@ Happy Birthday, Jose.
 
 <br><br>
 
-Thank you for being you.
+Thank you for being part of my story.
 
 <br><br>
 
-I love you forever.
+My favorite adventure is the one
+where I get to know you.
+
+<br><br>
+
+I love you.
+
+✨
 
 </p>
 
 
 </section>
+
+
 
 
 
