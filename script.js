@@ -10,12 +10,24 @@ const levelDisplay = document.getElementById("levelDisplay");
 
 function nextScene(){
 
-
 if(currentScene < scenes.length - 1){
 
 
-scenes[currentScene]
-.classList.remove("active");
+let oldScene = scenes[currentScene];
+
+
+// exit animation
+
+oldScene.classList.add("exit");
+
+
+
+setTimeout(()=>{
+
+
+oldScene.classList.remove("active");
+
+oldScene.classList.remove("exit");
 
 
 
@@ -23,8 +35,12 @@ currentScene++;
 
 
 
-scenes[currentScene]
-.classList.add("active");
+let newScene = scenes[currentScene];
+
+
+newScene.classList.add("active");
+
+newScene.classList.add("unlock");
 
 
 
@@ -33,11 +49,24 @@ levelDisplay.innerHTML =
 
 
 
+setTimeout(()=>{
+
+newScene.classList.remove("unlock");
+
+},800);
+
+
+
+
 if(currentScene === 3){
 
 createHearts();
 
 }
+
+
+
+},500);
 
 
 }
