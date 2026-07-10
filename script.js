@@ -1,5 +1,4 @@
-alert("JS IS WORKING 💜");
-
+alert("HELLO JOSE QUEST 💜");
 let currentScene = 0;
 
 
