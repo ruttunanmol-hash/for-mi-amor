@@ -243,3 +243,103 @@ function openLetter(){
 
 
 }
+
+/*
+JAVASCRIPT PART 3
+RED STRING THEORY MAGIC EFFECTS 🧵✨
+*/
+
+
+
+// FLOATING HEARTS ❤️
+
+function createHeart(){
+
+
+    const heart = document.createElement("div");
+
+
+    heart.innerHTML = "❤️";
+
+
+    heart.className = "floating-heart";
+
+
+    heart.style.left =
+    Math.random() * 100 + "vw";
+
+
+    heart.style.animationDuration =
+    (Math.random() * 3 + 3) + "s";
+
+
+
+    document.body.appendChild(heart);
+
+
+
+    setTimeout(()=>{
+
+        heart.remove();
+
+    },6000);
+
+
+}
+
+
+
+setInterval(createHeart,1500);
+
+
+
+
+
+
+
+// CLICK RED STRING EFFECT 🧵
+
+
+document.addEventListener("click", function(event){
+
+
+    const string =
+    document.createElement("div");
+
+
+
+    string.innerHTML = "🧵";
+
+
+
+    string.className =
+    "string-effect";
+
+
+
+    string.style.left =
+    event.pageX + "px";
+
+
+
+    string.style.top =
+    event.pageY + "px";
+
+
+
+    document.body.appendChild(string);
+
+
+
+
+    setTimeout(()=>{
+
+
+        string.remove();
+
+
+    },1000);
+
+
+
+});
