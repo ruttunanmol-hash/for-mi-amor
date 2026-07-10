@@ -1,178 +1,394 @@
 *{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:Georgia,serif;
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:"Georgia", serif;
 }
 
 
 body{
 
-background:linear-gradient(180deg,#12071f,#1b0b30,#2c1454);
+    background:
+    linear-gradient(180deg,#12071f,#241040,#3b176b);
 
-color:white;
+    color:white;
 
-height:100vh;
+    min-height:100vh;
 
-overflow:hidden;
+    overflow-x:hidden;
 
-display:flex;
+    display:flex;
 
-justify-content:center;
+    justify-content:center;
 
-align-items:center;
+    align-items:center;
 
-text-align:center;
+    text-align:center;
 
 }
 
+
+
+/* Galaxy stars */
+
+.stars{
+
+    position:fixed;
+
+    inset:0;
+
+    background-image:
+    radial-gradient(white 1px, transparent 1px);
+
+    background-size:45px 45px;
+
+    opacity:.25;
+
+    animation:starsMove 40s linear infinite;
+
+}
+
+
+@keyframes starsMove{
+
+from{
+    transform:translateY(0);
+}
+
+to{
+    transform:translateY(250px);
+}
+
+}
+
+
+
+/* Main game box */
 
 .container{
 
-z-index:2;
+    position:relative;
 
-max-width:700px;
+    z-index:5;
 
-padding:30px;
+    width:90%;
 
-animation:fade 1s;
+    max-width:750px;
+
+    padding:35px;
+
+    animation:appear 1s ease;
 
 }
+
+
+
+@keyframes appear{
+
+from{
+
+    opacity:0;
+
+    transform:translateY(30px);
+
+}
+
+to{
+
+    opacity:1;
+
+    transform:translateY(0);
+
+}
+
+}
+
+
 
 
 h1{
 
-font-size:3rem;
+    font-size:3rem;
 
-margin-bottom:20px;
+    margin-bottom:25px;
 
-text-shadow:0 0 20px #b86dff;
+    text-shadow:
+
+    0 0 10px #d8a4ff,
+
+    0 0 25px #b86dff;
 
 }
 
 
+
+h2{
+
+    margin-bottom:15px;
+
+}
+
+
+
 .heart{
 
-font-size:2.5rem;
+    font-size:3rem;
 
-margin:20px;
+    animation:pulse 2s infinite;
+
+}
+
+
+@keyframes pulse{
+
+50%{
+
+transform:scale(1.2);
+
+}
+
+}
+
+
+
+
+.text{
+
+    font-size:1.2rem;
+
+    line-height:1.8;
+
+    margin:15px 0;
+
+}
+
+
+
+
+button{
+
+    margin-top:35px;
+
+    padding:18px 50px;
+
+    border:none;
+
+    border-radius:50px;
+
+    background:#9b6cff;
+
+    color:white;
+
+    font-size:1.1rem;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+    box-shadow:0 0 20px #b86dff;
+
+}
+
+
+
+button:hover{
+
+    transform:scale(1.1);
+
+    background:#b784ff;
+
+}
+
+
+
+
+
+/* Gift cards */
+
+.gift{
+
+    background:#ffffff18;
+
+    border:1px solid #d19aff;
+
+    border-radius:25px;
+
+    padding:25px;
+
+    margin:20px 0;
+
+    cursor:pointer;
+
+    transition:.4s;
+
+    backdrop-filter:blur(5px);
+
+}
+
+
+.gift:hover{
+
+    transform:translateY(-8px) scale(1.03);
+
+    box-shadow:0 0 30px #c084fc;
+
+}
+
+
+
+
+
+/* Floating hearts */
+
+
+.floating{
+
+    position:fixed;
+
+    font-size:35px;
+
+    animation:float 6s infinite;
+
+    z-index:2;
+
+}
+
+
+.hearts{
+
+    left:15%;
+
+    bottom:-50px;
+
+}
+
+
+.hearts.two{
+
+    left:75%;
+
+    animation-delay:2s;
+
+}
+
+
+.hearts.three{
+
+    left:45%;
+
+    animation-delay:4s;
+
+}
+
+
+
+@keyframes float{
+
+0%{
+
+transform:translateY(0);
+
+opacity:0;
+
+}
+
+
+50%{
+
+opacity:1;
+
+}
+
+
+100%{
+
+transform:translateY(-900px);
+
+opacity:0;
+
+}
+
+}
+
+
+
+
+
+/* Cute pets */
+
+
+.pet{
+
+    position:fixed;
+
+    font-size:70px;
+
+    z-index:3;
+
+    animation:bounce 3s infinite;
+
+}
+
+
+.cat{
+
+    bottom:40px;
+
+    left:40px;
+
+}
+
+
+.dog{
+
+    bottom:40px;
+
+    right:40px;
+
+    animation-delay:1s;
+
+}
+
+
+
+@keyframes bounce{
+
+50%{
+
+transform:translateY(-20px);
+
+}
+
+}
+
+
+
+
+
+/* Mobile */
+
+@media(max-width:600px){
+
+
+h1{
+
+font-size:2rem;
 
 }
 
 
 .text{
 
-font-size:1.2rem;
-
-opacity:.9;
-
-margin-bottom:15px;
-
-line-height:1.7;
+font-size:1rem;
 
 }
 
 
-button{
+.pet{
 
-margin-top:35px;
-
-padding:18px 45px;
-
-font-size:1.1rem;
-
-border:none;
-
-border-radius:40px;
-
-cursor:pointer;
-
-background:#8b5cf6;
-
-color:white;
-
-transition:.3s;
+font-size:45px;
 
 }
 
-
-button:hover{
-
-transform:scale(1.08);
-
-box-shadow:0 0 25px #b86dff;
-
-}
-
-
-.gift{
-
-background:#ffffff15;
-
-border:1px solid #b86dff;
-
-padding:20px;
-
-margin:15px;
-
-border-radius:20px;
-
-font-size:1.2rem;
-
-}
-
-
-.stars{
-
-position:absolute;
-
-inset:0;
-
-background-image:
-radial-gradient(white 1px,transparent 1px);
-
-background-size:40px 40px;
-
-opacity:.25;
-
-animation:moveStars 50s linear infinite;
-
-}
-
-
-@keyframes moveStars{
-
-from{
-
-transform:translateY(0);
-
-}
-
-to{
-
-transform:translateY(300px);
-
-}
-
-}
-
-
-@keyframes fade{
-
-from{
-
-opacity:0;
-
-transform:translateY(20px);
-
-}
-
-to{
-
-opacity:1;
-
-transform:translateY(0);
-
-}
 
 }
