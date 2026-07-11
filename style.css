@@ -1,5 +1,5 @@
 /* ========================= */
-/* GLOBAL RESET */
+/* RESET */
 /* ========================= */
 
 * {
@@ -17,11 +17,11 @@ body {
 
     overflow: hidden;
 
-    background: #0b0618;
-
-    font-family: "Poppins", sans-serif;
+    background: #090018;
 
     color: white;
+
+    font-family: "Poppins", sans-serif;
 
 }
 
@@ -37,6 +37,7 @@ body {
 #storyContainer {
 
     width: 100%;
+
     height: 100vh;
 
     position: relative;
@@ -56,11 +57,7 @@ body {
 
     position: absolute;
 
-    width: 100%;
-    height: 100vh;
-
-    top: 0;
-    left: 0;
+    inset: 0;
 
     display: flex;
 
@@ -72,15 +69,16 @@ body {
 
     pointer-events: none;
 
-    transition:
-
-        opacity 1.5s ease,
-
-        transform 1.5s ease;
-
     transform: scale(1.05);
 
+    transition:
+
+    opacity 1.5s ease,
+
+    transform 1.5s ease;
+
 }
+
 
 
 
@@ -100,7 +98,7 @@ body {
 
 
 /* ========================= */
-/* BACKGROUND */
+/* PURPLE GALAXY BACKGROUND */
 /* ========================= */
 
 
@@ -112,15 +110,25 @@ body {
 
     background:
 
-    radial-gradient(circle at 20% 30%, rgba(255,255,255,0.15) 1px, transparent 2px),
+    radial-gradient(circle at 20% 30%,
+    rgba(255,255,255,0.4) 1px,
+    transparent 2px),
 
-    radial-gradient(circle at 80% 60%, rgba(255,255,255,0.12) 1px, transparent 2px),
+    radial-gradient(circle at 80% 20%,
+    rgba(220,190,255,0.5) 1px,
+    transparent 2px),
 
-    radial-gradient(circle at 50% 20%, rgba(255,255,255,0.1) 1px, transparent 2px);
+    radial-gradient(circle at 50% 80%,
+    rgba(255,255,255,0.3) 1px,
+    transparent 2px);
 
-    background-size: 250px 250px;
+    background-size:
 
-    animation: starsMove 20s linear infinite;
+    250px 250px;
+
+    animation:
+
+    starsMove 25s linear infinite;
 
 }
 
@@ -132,9 +140,9 @@ body {
 
     position: absolute;
 
-    width: 500px;
+    width: 600px;
 
-    height: 500px;
+    height: 600px;
 
     border-radius: 50%;
 
@@ -144,13 +152,13 @@ body {
 
     circle,
 
-    rgba(255,0,70,0.25),
+    rgba(170,90,255,0.35),
 
     transparent 70%
 
     );
 
-    filter: blur(30px);
+    filter: blur(50px);
 
 }
 
@@ -168,17 +176,21 @@ body {
 
     radial-gradient(
 
-    white 1px,
+    rgba(255,255,255,0.8) 1px,
 
     transparent 1px
 
     );
 
-    background-size: 80px 80px;
+    background-size:
+
+    90px 90px;
 
     opacity: 0.15;
 
-    animation: particleFloat 15s linear infinite;
+    animation:
+
+    particleFloat 18s linear infinite;
 
 }
 
@@ -197,7 +209,7 @@ body {
 
     z-index: 5;
 
-    width: min(90%, 800px);
+    width: min(90%, 850px);
 
     text-align: center;
 
@@ -211,20 +223,22 @@ body {
 
     font-family: "Cinzel", serif;
 
-    letter-spacing: 5px;
-
     text-transform: uppercase;
+
+    letter-spacing: 6px;
 
     font-size: 14px;
 
-    opacity: 0.7;
+    color: #d8b4fe;
 
-    margin-bottom: 20px;
+    opacity: 0.8;
+
+    margin-bottom: 25px;
 
 }
 
 /* ========================= */
-/* HEADINGS */
+/* TITLES */
 /* ========================= */
 
 
@@ -232,21 +246,23 @@ h1 {
 
     font-family: "Cinzel", serif;
 
-    font-size: clamp(45px, 8vw, 90px);
+    font-size: clamp(50px, 9vw, 100px);
 
     font-weight: 700;
 
-    letter-spacing: 4px;
+    letter-spacing: 5px;
 
     line-height: 1.1;
 
     margin-bottom: 20px;
 
+    color: #ffffff;
+
     text-shadow:
 
-    0 0 20px rgba(255,255,255,0.25),
+    0 0 20px rgba(216,180,254,0.5),
 
-    0 0 50px rgba(255,0,70,0.35);
+    0 0 60px rgba(147,51,234,0.5);
 
 }
 
@@ -258,9 +274,11 @@ h1 span {
 
     display: inline-block;
 
-    color: #ff3b6b;
+    color: #d8b4fe;
 
-    animation: nameGlow 3s ease-in-out infinite;
+    animation:
+
+    purpleGlow 3s ease-in-out infinite;
 
 }
 
@@ -272,15 +290,13 @@ h2 {
 
     font-family: "Cinzel", serif;
 
-    font-size: clamp(22px, 4vw, 40px);
-
-    font-weight: 600;
+    font-size: clamp(25px, 5vw, 45px);
 
     letter-spacing: 3px;
 
-    margin-bottom: 35px;
+    color: #f3e8ff;
 
-    color: rgba(255,255,255,0.9);
+    margin-bottom: 35px;
 
 }
 
@@ -292,11 +308,11 @@ h2 {
 
     font-size: 16px;
 
-    letter-spacing: 6px;
+    letter-spacing: 7px;
 
     text-transform: uppercase;
 
-    opacity: 0.7;
+    color: #c084fc;
 
     margin-bottom: 25px;
 
@@ -313,17 +329,19 @@ h2 {
 
 .intro {
 
-    max-width: 600px;
+    max-width: 650px;
 
-    margin: 0 auto 20px;
+    margin: auto;
 
-    font-size: 18px;
+    font-size: 19px;
 
-    line-height: 1.8;
+    line-height: 2;
 
     font-weight: 300;
 
-    color: rgba(255,255,255,0.85);
+    color:
+
+    rgba(255,255,255,0.85);
 
 }
 
@@ -333,15 +351,17 @@ h2 {
 
 .storyText {
 
-    max-width: 650px;
+    max-width: 700px;
 
-    margin: 18px auto;
+    margin: 20px auto;
 
     font-size: 18px;
 
     line-height: 2;
 
-    font-weight: 300;
+    color:
+
+    rgba(255,255,255,0.85);
 
 }
 
@@ -359,19 +379,21 @@ h2 {
 
     margin-top: 35px;
 
-    padding: 15px 40px;
+    padding: 16px 45px;
 
     border-radius: 50px;
+
+    cursor: pointer;
+
+    font-family:
+
+    "Poppins", sans-serif;
 
     font-size: 16px;
 
     letter-spacing: 2px;
 
-    cursor: pointer;
-
     transition: 0.4s ease;
-
-    font-family: "Poppins", sans-serif;
 
 }
 
@@ -381,7 +403,14 @@ h2 {
 
 .mainButton {
 
-    border: 1px solid rgba(255,50,100,0.8);
+
+    color: white;
+
+
+    border:
+
+    1px solid rgba(216,180,254,0.8);
+
 
     background:
 
@@ -389,17 +418,16 @@ h2 {
 
     45deg,
 
-    #8b001f,
+    #6b21a8,
 
-    #ff174f
+    #9333ea
 
     );
 
-    color: white;
 
     box-shadow:
 
-    0 0 20px rgba(255,0,70,0.5);
+    0 0 25px rgba(147,51,234,0.5);
 
 }
 
@@ -409,11 +437,17 @@ h2 {
 
 .mainButton:hover {
 
-    transform: translateY(-5px) scale(1.05);
+
+    transform:
+
+    translateY(-5px)
+
+    scale(1.05);
+
 
     box-shadow:
 
-    0 0 40px rgba(150,80,255,0.25)
+    0 0 50px rgba(192,132,252,0.8);
 
 }
 
@@ -423,11 +457,18 @@ h2 {
 
 .secondaryButton {
 
-    background: transparent;
-
-    border: 1px solid rgba(255,255,255,0.4);
 
     color: white;
+
+
+    background:
+
+    transparent;
+
+
+    border:
+
+    1px solid rgba(255,255,255,0.35);
 
 }
 
@@ -437,7 +478,10 @@ h2 {
 
 .secondaryButton:hover {
 
-    background: rgba(255,255,255,0.1);
+
+    background:
+
+    rgba(255,255,255,0.1);
 
 }
 
@@ -447,11 +491,17 @@ h2 {
 
 .buttonGroup {
 
-    display: flex;
+    display:
 
-    justify-content: center;
+    flex;
 
-    gap: 20px;
+    justify-content:
+
+    center;
+
+    gap:
+
+    20px;
 
 }
 
@@ -464,14 +514,14 @@ h2 {
 /* ========================= */
 
 
-@keyframes nameGlow {
+@keyframes purpleGlow {
 
 
     0% {
 
         text-shadow:
 
-        0 0 10px #ff174f;
+        0 0 15px #c084fc;
 
     }
 
@@ -480,7 +530,7 @@ h2 {
 
         text-shadow:
 
-        0 0 40px #ff174f;
+        0 0 45px #9333ea;
 
     }
 
@@ -489,7 +539,7 @@ h2 {
 
         text-shadow:
 
-        0 0 10px #ff174f;
+        0 0 15px #c084fc;
 
     }
 
@@ -504,14 +554,18 @@ h2 {
 
     from {
 
-        transform: translateY(0);
+        transform:
+
+        translateY(0);
 
     }
 
 
     to {
 
-        transform: translateY(-200px);
+        transform:
+
+        translateY(-200px);
 
     }
 
@@ -526,33 +580,37 @@ h2 {
 
     from {
 
-        transform: translateY(0);
+        transform:
+
+        translateY(0);
 
     }
 
 
     to {
 
-        transform: translateY(-150px);
+        transform:
+
+        translateY(-150px);
 
     }
 
 }
 
 /* ========================= */
-/* RED STRING MOMENT */
+/* RED STRING */
 /* ========================= */
 
 
 .redString {
 
-    font-size: 50px;
+    font-size: 55px;
 
-    margin: 30px auto;
+    margin: 35px auto;
 
     animation:
 
-    stringFloat 3s ease-in-out infinite;
+    floatString 3s ease-in-out infinite;
 
 }
 
@@ -562,9 +620,13 @@ h2 {
 
 .stringAnimation {
 
-    width: min(90%, 600px);
+    width:
 
-    margin: 30px auto;
+    min(90%, 650px);
+
+    margin:
+
+    40px auto;
 
 }
 
@@ -586,25 +648,37 @@ h2 {
 
 .stringPath {
 
+
     fill: none;
+
 
     stroke: #ff174f;
 
+
     stroke-width: 5;
+
 
     stroke-linecap: round;
 
+
     filter:
 
-    drop-shadow(0 0 10px #ff174f);
+    drop-shadow(
+
+    0 0 15px #ff174f
+
+    );
+
 
     stroke-dasharray: 1000;
 
+
     stroke-dashoffset: 1000;
+
 
     animation:
 
-    drawString 4s ease forwards;
+    drawString 5s ease forwards;
 
 }
 
@@ -627,86 +701,28 @@ h2 {
 
 
 
-@keyframes stringFloat {
+@keyframes floatString {
 
 
     0% {
 
-        transform: translateY(0);
+        transform:
+
+        translateY(0);
 
     }
 
 
     50% {
 
-        transform: translateY(-15px);
+        transform:
+
+        translateY(-15px);
 
     }
 
 
     100% {
-
-        transform: translateY(0);
-
-    }
-
-}
-
-
-
-
-
-/* ========================= */
-/* CHAPTER LABEL */
-/* ========================= */
-
-
-.chapter {
-
-    animation:
-
-    fadeUp 1.5s ease forwards;
-
-}
-
-
-
-
-
-/* ========================= */
-/* STORY ANIMATION */
-/* ========================= */
-
-
-.storyText {
-
-    animation:
-
-    fadeUp 2s ease forwards;
-
-}
-
-
-
-
-
-@keyframes fadeUp {
-
-
-    from {
-
-        opacity: 0;
-
-        transform:
-
-        translateY(30px);
-
-    }
-
-
-    to {
-
-        opacity: 1;
 
         transform:
 
@@ -727,9 +743,13 @@ h2 {
 
 .stringHeart {
 
-    width: 300px;
+    width:
 
-    margin: 20px auto;
+    320px;
+
+    margin:
+
+    30px auto;
 
 }
 
@@ -739,29 +759,49 @@ h2 {
 
 .heartPath {
 
-    fill: none;
 
-    stroke: #ff174f;
+    fill:
 
-    stroke-width: 5;
+    none;
 
-    stroke-linecap: round;
+
+    stroke:
+
+    #ff174f;
+
+
+    stroke-width:
+
+    5;
+
+
+    stroke-linecap:
+
+    round;
+
 
     filter:
 
     drop-shadow(
 
-    0 0 15px #ff174f
+    0 0 20px #ff174f
 
     );
 
-    stroke-dasharray: 1000;
 
-    stroke-dashoffset: 1000;
+    stroke-dasharray:
+
+    1000;
+
+
+    stroke-dashoffset:
+
+    1000;
+
 
     animation:
 
-    heartDraw 5s ease forwards;
+    drawHeart 5s ease forwards;
 
 }
 
@@ -769,7 +809,7 @@ h2 {
 
 
 
-@keyframes heartDraw {
+@keyframes drawHeart {
 
 
     to {
@@ -780,14 +820,21 @@ h2 {
 
 }
 
+
+
+
+
 /* ========================= */
-/* GAME SCENE */
+/* SCENE TEXT ENTRANCE */
 /* ========================= */
 
 
-.gameScene {
+.sceneContent {
 
-    text-align: center;
+
+    animation:
+
+    fadeUp 1.5s ease forwards;
 
 }
 
@@ -795,29 +842,84 @@ h2 {
 
 
 
+@keyframes fadeUp {
+
+
+    from {
+
+
+        opacity: 0;
+
+
+        transform:
+
+        translateY(35px);
+
+
+    }
+
+
+
+    to {
+
+
+        opacity: 1;
+
+
+        transform:
+
+        translateY(0);
+
+
+    }
+
+}
+
+/* ========================= */
+/* PLAYER TWO CARD */
+/* ========================= */
+
+
 .gameCard {
 
-    width: min(90%, 550px);
+    width:
 
-    margin: 30px auto;
+    min(90%, 600px);
 
-    padding: 35px;
 
-    border-radius: 25px;
+    margin:
+
+    35px auto;
+
+
+    padding:
+
+    40px;
+
+
+    border-radius:
+
+    30px;
+
 
     background:
 
-    rgba(255,255,255,0.05);
+    rgba(255,255,255,0.06);
+
 
     border:
 
-    1px solid rgba(255,255,255,0.15);
+    1px solid rgba(216,180,254,0.25);
 
-    backdrop-filter: blur(15px);
+
+    backdrop-filter:
+
+    blur(18px);
+
 
     box-shadow:
 
-    0 0 40px rgba(255,0,70,0.25);
+    0 0 50px rgba(147,51,234,0.35);
 
 }
 
@@ -827,13 +929,26 @@ h2 {
 
 .gameHeader {
 
-    font-size: 14px;
 
-    letter-spacing: 5px;
+    font-size:
 
-    opacity: 0.7;
+    14px;
 
-    margin-bottom: 20px;
+
+    letter-spacing:
+
+    6px;
+
+
+    color:
+
+    #d8b4fe;
+
+
+    opacity:
+
+    0.8;
+
 
 }
 
@@ -843,13 +958,25 @@ h2 {
 
 .gameCard h3 {
 
-    font-family: "Cinzel", serif;
 
-    font-size: 45px;
+    font-family:
 
-    color: #ff3b6b;
+    "Cinzel", serif;
 
-    margin-bottom: 20px;
+
+    font-size:
+
+    50px;
+
+
+    color:
+
+    #f3e8ff;
+
+
+    margin:
+
+    20px 0;
 
 }
 
@@ -859,19 +986,35 @@ h2 {
 
 .status {
 
-    display: inline-flex;
 
-    align-items: center;
+    display:
 
-    gap: 10px;
+    inline-flex;
 
-    padding: 10px 20px;
 
-    border-radius: 50px;
+    align-items:
 
-    background: rgba(0,255,120,0.1);
+    center;
 
-    margin-bottom: 30px;
+
+    gap:
+
+    10px;
+
+
+    padding:
+
+    10px 25px;
+
+
+    border-radius:
+
+    50px;
+
+
+    background:
+
+    rgba(192,132,252,0.15);
 
 }
 
@@ -881,17 +1024,30 @@ h2 {
 
 .status span {
 
-    width: 10px;
 
-    height: 10px;
+    width:
 
-    background: #3cff8f;
+    10px;
 
-    border-radius: 50%;
+
+    height:
+
+    10px;
+
+
+    border-radius:
+
+    50%;
+
+
+    background:
+
+    #c084fc;
+
 
     box-shadow:
 
-    0 0 15px #3cff8f;
+    0 0 15px #c084fc;
 
 }
 
@@ -906,11 +1062,25 @@ h2 {
 
 .stats {
 
-    display: flex;
 
-    flex-direction: column;
+    display:
 
-    gap: 15px;
+    flex;
+
+
+    flex-direction:
+
+    column;
+
+
+    gap:
+
+    15px;
+
+
+    margin-top:
+
+    30px;
 
 }
 
@@ -920,11 +1090,21 @@ h2 {
 
 .stat {
 
-    display: flex;
 
-    justify-content: space-between;
+    display:
 
-    padding: 15px;
+    flex;
+
+
+    justify-content:
+
+    space-between;
+
+
+    padding:
+
+    15px;
+
 
     border-bottom:
 
@@ -938,17 +1118,10 @@ h2 {
 
 .stat p {
 
-    opacity: 0.6;
 
-}
+    color:
 
-
-
-
-
-.stat h4 {
-
-    font-weight: 500;
+    rgba(255,255,255,0.6);
 
 }
 
@@ -963,7 +1136,10 @@ h2 {
 
 .level {
 
-    margin-top: 30px;
+
+    margin-top:
+
+    35px;
 
 }
 
@@ -973,17 +1149,30 @@ h2 {
 
 .levelBar {
 
-    width: 100%;
 
-    height: 12px;
+    height:
+
+    12px;
+
+
+    width:
+
+    100%;
+
 
     background:
 
     rgba(255,255,255,0.15);
 
-    border-radius: 20px;
 
-    overflow: hidden;
+    border-radius:
+
+    20px;
+
+
+    overflow:
+
+    hidden;
 
 }
 
@@ -993,9 +1182,16 @@ h2 {
 
 .levelFill {
 
-    height: 100%;
 
-    width: 75%;
+    height:
+
+    100%;
+
+
+    width:
+
+    75%;
+
 
     background:
 
@@ -1003,13 +1199,17 @@ h2 {
 
     90deg,
 
-    #ff174f,
+    #c084fc,
 
-    #ff8a00
+    #e9d5ff
 
     );
 
-    border-radius: inherit;
+
+    border-radius:
+
+    inherit;
+
 
     animation:
 
@@ -1026,14 +1226,14 @@ h2 {
 
     from {
 
-        width: 0;
+        width:0;
 
     }
 
 
     to {
 
-        width: 75%;
+        width:75%;
 
     }
 
@@ -1050,25 +1250,45 @@ h2 {
 
 .achievementPopup {
 
-    margin: 30px auto;
 
-    padding: 35px;
+    width:
 
-    width: min(90%, 450px);
+    min(90%,450px);
+
+
+    margin:
+
+    35px auto;
+
+
+    padding:
+
+    40px;
+
+
+    border-radius:
+
+    30px;
+
 
     background:
 
-    rgba(255,255,255,0.07);
+    rgba(255,255,255,0.06);
 
-    border-radius: 25px;
 
     border:
 
     1px solid rgba(255,215,0,0.4);
 
+
+    backdrop-filter:
+
+    blur(15px);
+
+
     animation:
 
-    achievementAppear 1.5s ease;
+    achievementPop 1.5s ease;
 
 }
 
@@ -1078,9 +1298,15 @@ h2 {
 
 .trophy {
 
-    font-size: 70px;
 
-    margin-bottom: 20px;
+    font-size:
+
+    75px;
+
+
+    margin-bottom:
+
+    20px;
 
 }
 
@@ -1090,11 +1316,20 @@ h2 {
 
 .achievementPopup h3 {
 
-    color: #ffd700;
 
-    font-family: "Cinzel", serif;
+    font-family:
 
-    letter-spacing: 2px;
+    "Cinzel", serif;
+
+
+    color:
+
+    #fde68a;
+
+
+    letter-spacing:
+
+    3px;
 
 }
 
@@ -1104,11 +1339,20 @@ h2 {
 
 .achievementLine {
 
-    margin-top: 20px;
 
-    letter-spacing: 10px;
+    margin-top:
 
-    color: #ffd700;
+    20px;
+
+
+    color:
+
+    #fde68a;
+
+
+    letter-spacing:
+
+    8px;
 
 }
 
@@ -1116,27 +1360,33 @@ h2 {
 
 
 
-@keyframes achievementAppear {
+@keyframes achievementPop {
 
 
     from {
 
-        opacity: 0;
+
+        opacity:0;
+
 
         transform:
 
         scale(0.7);
+
 
     }
 
 
     to {
 
-        opacity: 1;
+
+        opacity:1;
+
 
         transform:
 
         scale(1);
+
 
     }
 
@@ -1149,15 +1399,29 @@ h2 {
 
 .giftRoom {
 
-    display: flex;
+    display:
 
-    justify-content: center;
+    flex;
 
-    gap: 35px;
 
-    flex-wrap: wrap;
+    justify-content:
 
-    margin: 40px auto;
+    center;
+
+
+    gap:
+
+    35px;
+
+
+    flex-wrap:
+
+    wrap;
+
+
+    margin:
+
+    40px auto;
 
 }
 
@@ -1167,9 +1431,15 @@ h2 {
 
 .gift {
 
-    cursor: pointer;
 
-    transition: 0.5s ease;
+    cursor:
+
+    pointer;
+
+
+    transition:
+
+    0.5s ease;
 
 }
 
@@ -1179,11 +1449,12 @@ h2 {
 
 .gift:hover {
 
+
     transform:
 
     translateY(-15px)
 
-    scale(1.1);
+    scale(1.08);
 
 }
 
@@ -1193,31 +1464,55 @@ h2 {
 
 .giftBox {
 
-    width: 120px;
 
-    height: 120px;
+    width:
 
-    display: flex;
+    120px;
 
-    align-items: center;
 
-    justify-content: center;
+    height:
 
-    font-size: 60px;
+    120px;
+
+
+    display:
+
+    flex;
+
+
+    justify-content:
+
+    center;
+
+
+    align-items:
+
+    center;
+
+
+    font-size:
+
+    60px;
+
+
+    border-radius:
+
+    25px;
+
 
     background:
 
-    rgba(255,255,255,0.05);
+    rgba(255,255,255,0.06);
 
-    border-radius: 25px;
 
     border:
 
-    1px solid rgba(255,0,70,0.4);
+    1px solid rgba(216,180,254,0.4);
+
 
     box-shadow:
 
-    0 0 25px rgba(255,0,70,0.25);
+    0 0 30px rgba(147,51,234,0.4);
 
 }
 
@@ -1227,11 +1522,20 @@ h2 {
 
 .gift p {
 
-    margin-top: 15px;
 
-    font-size: 14px;
+    margin-top:
 
-    letter-spacing: 2px;
+    15px;
+
+
+    color:
+
+    #e9d5ff;
+
+
+    letter-spacing:
+
+    2px;
 
 }
 
@@ -1241,15 +1545,28 @@ h2 {
 
 .giftMessage {
 
-    min-height: 50px;
 
-    margin: 20px auto;
+    min-height:
 
-    font-size: 18px;
+    50px;
 
-    color: #ffd6df;
+
+    margin:
+
+    25px auto;
+
+
+    color:
+
+    #f3e8ff;
+
+
+    font-size:
+
+    18px;
 
 }
+
 
 
 
@@ -1262,17 +1579,30 @@ h2 {
 
 .musicRoom {
 
-    display: flex;
 
-    justify-content: center;
+    display:
 
-    align-items: center;
+    flex;
 
-    gap: 50px;
 
-    flex-wrap: wrap;
+    justify-content:
 
-    margin-top: 40px;
+    center;
+
+
+    align-items:
+
+    center;
+
+
+    gap:
+
+    50px;
+
+
+    flex-wrap:
+
+    wrap;
 
 }
 
@@ -1282,25 +1612,45 @@ h2 {
 
 .recordPlayer {
 
-    width: 220px;
 
-    height: 220px;
+    width:
 
-    border-radius: 50%;
+    230px;
+
+
+    height:
+
+    230px;
+
+
+    border-radius:
+
+    50%;
+
+
+    display:
+
+    flex;
+
+
+    align-items:
+
+    center;
+
+
+    justify-content:
+
+    center;
+
 
     background:
 
     rgba(255,255,255,0.05);
 
-    display: flex;
-
-    align-items: center;
-
-    justify-content: center;
 
     box-shadow:
 
-    0 0 50px rgba(255,0,70,0.3);
+    0 0 50px rgba(147,51,234,0.5);
 
 }
 
@@ -1310,11 +1660,21 @@ h2 {
 
 .vinylRecord {
 
-    width: 180px;
 
-    height: 180px;
+    width:
 
-    border-radius: 50%;
+    180px;
+
+
+    height:
+
+    180px;
+
+
+    border-radius:
+
+    50%;
+
 
     background:
 
@@ -1322,11 +1682,12 @@ h2 {
 
     circle,
 
-    #ff174f 0 10%,
+    #d8b4fe 0 10%,
 
-    #111 11% 100%
+    #120020 11% 100%
 
     );
+
 
     animation:
 
@@ -1340,15 +1701,30 @@ h2 {
 
 .vinylCenter {
 
-    width: 25px;
 
-    height: 25px;
+    width:
 
-    background: white;
+    25px;
 
-    border-radius: 50%;
 
-    margin: auto;
+    height:
+
+    25px;
+
+
+    background:
+
+    white;
+
+
+    border-radius:
+
+    50%;
+
+
+    margin:
+
+    auto;
 
 }
 
@@ -1361,26 +1737,20 @@ h2 {
 
     from {
 
-        transform: rotate(0deg);
+        transform:
+
+        rotate(0deg);
 
     }
 
 
     to {
 
-        transform: rotate(360deg);
+        transform:
+
+        rotate(360deg);
 
     }
-
-}
-
-
-
-
-
-.musicInfo {
-
-    text-align: center;
 
 }
 
@@ -1390,7 +1760,15 @@ h2 {
 
 .musicInfo h3 {
 
-    font-family: "Cinzel", serif;
+
+    font-family:
+
+    "Cinzel", serif;
+
+
+    color:
+
+    #d8b4fe;
 
 }
 
@@ -1400,11 +1778,20 @@ h2 {
 
 .songName {
 
-    font-size: 28px;
 
-    color: #ff3b6b;
+    font-size:
 
-    margin: 15px;
+    30px;
+
+
+    color:
+
+    #f3e8ff;
+
+
+    margin:
+
+    15px;
 
 }
 
@@ -1414,21 +1801,35 @@ h2 {
 
 .musicButton {
 
-    padding: 12px 30px;
 
-    border-radius: 30px;
+    padding:
+
+    12px 35px;
+
+
+    border-radius:
+
+    50px;
+
 
     background:
 
     transparent;
 
+
+    color:
+
+    white;
+
+
     border:
 
-    1px solid #ff174f;
+    1px solid #d8b4fe;
 
-    color: white;
 
-    cursor: pointer;
+    cursor:
+
+    pointer;
 
 }
 
@@ -1438,11 +1839,26 @@ h2 {
 
 .notes span {
 
-    display: inline-block;
 
-    margin: 20px 8px;
+    display:
 
-    font-size: 25px;
+    inline-block;
+
+
+    font-size:
+
+    28px;
+
+
+    margin:
+
+    20px 8px;
+
+
+    color:
+
+    #d8b4fe;
+
 
     animation:
 
@@ -1454,52 +1870,23 @@ h2 {
 
 
 
-.notes span:nth-child(2) {
-
-    animation-delay: 1s;
-
-}
-
-
-
-
-
-.notes span:nth-child(3) {
-
-    animation-delay: 2s;
-
-}
-
-
-
-
-
 @keyframes noteFloat {
 
 
-    from {
+    0%,100% {
 
-        transform: translateY(0);
+        transform:
 
-        opacity: 0.5;
+        translateY(0);
 
     }
 
 
     50% {
 
-        transform: translateY(-20px);
+        transform:
 
-        opacity: 1;
-
-    }
-
-
-    to {
-
-        transform: translateY(0);
-
-        opacity: 0.5;
+        translateY(-20px);
 
     }
 
@@ -1512,7 +1899,9 @@ h2 {
 
 .finalScene {
 
-    text-align: center;
+    text-align:
+
+    center;
 
 }
 
@@ -1522,25 +1911,45 @@ h2 {
 
 .letterBox {
 
-    width: min(90%, 650px);
 
-    margin: 30px auto;
+    width:
 
-    padding: 35px;
+    min(90%,700px);
 
-    border-radius: 25px;
+
+    margin:
+
+    35px auto;
+
+
+    padding:
+
+    40px;
+
+
+    border-radius:
+
+    30px;
+
 
     background:
 
-    rgba(255,255,255,0.05);
+    rgba(255,255,255,0.06);
+
 
     border:
 
-    1px solid rgba(255,255,255,0.15);
+    1px solid rgba(216,180,254,0.25);
 
-    backdrop-filter: blur(12px);
 
-    line-height: 2;
+    backdrop-filter:
+
+    blur(18px);
+
+
+    box-shadow:
+
+    0 0 50px rgba(147,51,234,0.35);
 
 }
 
@@ -1550,11 +1959,25 @@ h2 {
 
 .letterBox p {
 
-    margin-bottom: 20px;
 
-    font-size: 17px;
+    font-size:
 
-    font-weight: 300;
+    18px;
+
+
+    line-height:
+
+    2;
+
+
+    margin-bottom:
+
+    20px;
+
+
+    color:
+
+    rgba(255,255,255,0.9);
 
 }
 
@@ -1564,11 +1987,20 @@ h2 {
 
 .signature {
 
-    font-family: "Cinzel", serif;
 
-    font-size: 25px;
+    font-family:
 
-    color: #ff3b6b;
+    "Cinzel", serif;
+
+
+    font-size:
+
+    28px;
+
+
+    color:
+
+    #d8b4fe;
 
 }
 
@@ -1576,16 +2008,29 @@ h2 {
 
 
 
+
 /* ========================= */
-/* ENDING SCENE */
+/* FINAL ENDING */
 /* ========================= */
 
 
 .endingScene h1 {
 
-    font-family: "Cinzel", serif;
 
-    font-size: clamp(50px, 9vw, 100px);
+    font-family:
+
+    "Cinzel", serif;
+
+
+    font-size:
+
+    clamp(55px,10vw,110px);
+
+
+    color:
+
+    white;
+
 
 }
 
@@ -1595,15 +2040,30 @@ h2 {
 
 .endingText {
 
-    font-size: 20px;
 
-    line-height: 2;
+    max-width:
 
-    max-width: 600px;
+    650px;
 
-    margin: 20px auto;
 
-    opacity: 0.85;
+    margin:
+
+    20px auto;
+
+
+    font-size:
+
+    20px;
+
+
+    line-height:
+
+    2;
+
+
+    color:
+
+    rgba(255,255,255,0.85);
 
 }
 
@@ -1613,7 +2073,11 @@ h2 {
 
 .finalString {
 
-    font-size: 70px;
+
+    font-size:
+
+    75px;
+
 
     animation:
 
@@ -1627,13 +2091,25 @@ h2 {
 
 .finalGlow {
 
-    margin-top: 40px;
 
-    font-size: 35px;
+    margin-top:
+
+    40px;
+
+
+    font-size:
+
+    40px;
+
+
+    color:
+
+    #d8b4fe;
+
 
     animation:
 
-    glowPulse 2s infinite;
+    finalGlow 2s infinite;
 
 }
 
@@ -1646,21 +2122,27 @@ h2 {
 
     0% {
 
-        transform: scale(1);
+        transform:
+
+        scale(1);
 
     }
 
 
     50% {
 
-        transform: scale(1.15);
+        transform:
+
+        scale(1.15);
 
     }
 
 
     100% {
 
-        transform: scale(1);
+        transform:
+
+        scale(1);
 
     }
 
@@ -1670,30 +2152,35 @@ h2 {
 
 
 
-@keyframes glowPulse {
+@keyframes finalGlow {
 
 
-    0% {
+    0%,100% {
 
-        opacity: 0.5;
+
+        opacity:
+
+        0.6;
+
+
+        text-shadow:
+
+        0 0 10px #d8b4fe;
 
     }
 
 
     50% {
 
-        opacity: 1;
+
+        opacity:
+
+        1;
+
 
         text-shadow:
 
-        0 0 30px #ff174f;
-
-    }
-
-
-    100% {
-
-        opacity: 0.5;
+        0 0 40px #c084fc;
 
     }
 
@@ -1704,7 +2191,7 @@ h2 {
 
 
 /* ========================= */
-/* MOBILE RESPONSIVE */
+/* MOBILE */
 /* ========================= */
 
 
@@ -1713,35 +2200,49 @@ h2 {
 
     h1 {
 
-        font-size: 45px;
+        font-size:
+
+        45px;
 
     }
+
 
 
     h2 {
 
-        font-size: 25px;
+        font-size:
+
+        28px;
 
     }
+
 
 
     .buttonGroup {
 
-        flex-direction: column;
+        flex-direction:
+
+        column;
 
     }
 
 
-    .musicRoom {
 
-        gap: 25px;
+    .letterBox {
+
+        padding:
+
+        25px;
 
     }
 
 
-    .gameCard {
 
-        padding: 25px;
+    .giftRoom {
+
+        gap:
+
+        20px;
 
     }
 
