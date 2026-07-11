@@ -1,19 +1,20 @@
-/*
-THE RED STRING THEORY ❤️
-JOSE'S BIRTHDAY WEBSITE
-JAVASCRIPT PART 1
-*/
+// =========================
+// SCENE SYSTEM
+// =========================
 
 
-// BUTTON: START OUR STORY 🧵
-
-let currentScene = 0;
+let currentScene = 1;
 
 
-const scenes = document.querySelectorAll("section");
+const totalScenes = 9;
 
 
-function showScene(index){
+
+function showScene(sceneNumber) {
+
+
+    const scenes = document.querySelectorAll(".scene");
+
 
     scenes.forEach(scene => {
 
@@ -22,15 +23,29 @@ function showScene(index){
     });
 
 
-    scenes[index].classList.add("active");
+
+    const next = document.getElementById(
+        "scene" + sceneNumber
+    );
+
+
+    if (next) {
+
+        next.classList.add("active");
+
+    }
+
 
 }
 
 
 
-function nextScene(){
 
-    if(currentScene < scenes.length - 1){
+
+function nextScene() {
+
+
+    if (currentScene < totalScenes) {
 
         currentScene++;
 
@@ -38,13 +53,401 @@ function nextScene(){
 
     }
 
+
 }
 
 
 
-window.onload = function(){
 
-    showScene(0);
+
+function previousScene() {
+
+
+    if (currentScene > 1) {
+
+        currentScene--;
+
+        showScene(currentScene);
+
+    }
+
+
+}
+
+
+
+
+
+// =========================
+// LOADING SCREEN
+// =========================
+
+
+window.addEventListener(
+"load",
+() => {
+
+
+    const loading =
+    document.getElementById(
+        "loadingScreen"
+    );
+
+
+
+    setTimeout(() => {
+
+
+        loading.style.opacity = "0";
+
+
+
+        setTimeout(() => {
+
+
+            loading.style.display =
+            "none";
+
+
+        }, 1500);
+
+
+
+    }, 3000);
+
+
+
+});
+
+// =========================
+// GIFT ROOM
+// =========================
+
+
+function openGift(number) {
+
+
+    const message =
+    document.getElementById(
+        "giftMessage"
+    );
+
+
+
+    if (number === 1) {
+
+
+        message.innerHTML =
+
+        "❤️ Happy Birthday Jose. I hope today brings you as much happiness as you bring to others.";
+
+
+    }
+
+
+
+    if (number === 2) {
+
+
+        message.innerHTML =
+
+        "✨ I hope this is only the first of many birthdays we get to celebrate together.";
+
+
+    }
+
+
+
+    if (number === 3) {
+
+
+        message.innerHTML =
+
+        "🧵 The red string represents every unexpected moment that brought this story here.";
+
+
+    }
+
+
+}
+
+
+
+
+
+// =========================
+// MUSIC BUTTON
+// =========================
+
+
+let musicPlaying = false;
+
+
+
+function toggleMusic() {
+
+
+    const button =
+    document.querySelector(
+        ".musicButton"
+    );
+
+
+
+    const vinyl =
+    document.querySelector(
+        ".vinylRecord"
+    );
+
+
+
+    musicPlaying =
+    !musicPlaying;
+
+
+
+    if (musicPlaying) {
+
+
+        button.innerHTML =
+        "⏸ Pause";
+
+
+        vinyl.style.animationPlayState =
+        "running";
+
+
+    }
+
+    else {
+
+
+        button.innerHTML =
+        "▶ Play";
+
+
+        vinyl.style.animationPlayState =
+        "paused";
+
+
+    }
+
+
+}
+
+// =========================
+// LETTER TYPEWRITER
+// =========================
+
+
+function typeLetter() {
+
+
+    const letter =
+    document.getElementById(
+        "letterText"
+    );
+
+
+    if (!letter) return;
+
+
+
+    const text =
+    letter.innerText;
+
+
+
+    letter.innerHTML = "";
+
+
+
+    let index = 0;
+
+
+
+    function write() {
+
+
+        if (index < text.length) {
+
+
+            letter.innerHTML +=
+            text.charAt(index);
+
+
+
+            index++;
+
+
+            setTimeout(
+                write,
+                40
+            );
+
+
+        }
+
+
+    }
+
+
+
+    write();
+
+
+}
+
+
+
+
+
+// =========================
+// START LETTER EFFECT
+// =========================
+
+
+const sceneObserver =
+new MutationObserver(() => {
+
+
+    const scene =
+    document.getElementById(
+        "scene8"
+    );
+
+
+
+    if (
+        scene &&
+        scene.classList.contains(
+            "active"
+        )
+    ) {
+
+
+        typeLetter();
+
+
+    }
+
+
+});
+
+
+
+
+
+const story =
+document.getElementById(
+    "storyContainer"
+);
+
+
+
+if (story) {
+
+
+    sceneObserver.observe(
+        story,
+        {
+            attributes: true,
+            subtree: true,
+            attributeFilter: [
+                "class"
+            ]
+        }
+    );
+
+
+}
+
+
+
+
+
+// =========================
+// FINAL HEART GLOW
+// =========================
+
+
+function finalMoment(){
+
+
+    const heart =
+    document.querySelector(
+        ".finalString"
+    );
+
+
+    if(heart){
+
+
+        heart.style.transform =
+        "scale(1.3)";
+
+
+    }
+
+
+}
+
+// =========================
+// SCENE ENTRANCE EFFECTS
+// =========================
+
+
+function animateScene() {
+
+
+    const content =
+    document.querySelector(
+        ".scene.active .sceneContent"
+    );
+
+
+    if(content){
+
+
+        content.style.animation =
+        "none";
+
+
+        setTimeout(() => {
+
+
+            content.style.animation =
+            "fadeUp 1.5s ease forwards";
+
+
+        }, 50);
+
+
+    }
+
+
+}
+
+
+
+
+
+// Run animation whenever scene changes
+
+
+const originalShowScene =
+showScene;
+
+
+
+showScene = function(sceneNumber){
+
+
+    originalShowScene(sceneNumber);
+
+
+    animateScene();
+
 
 };
 
@@ -53,322 +456,111 @@ window.onload = function(){
 
 
 
-// MUSIC ROOM MESSAGE 🎵
 
+// =========================
+// GIFT ANIMATION
+// =========================
 
-function playMusicMessage(){
 
+function openGift(number) {
 
-    const messages = [
 
+    const message =
+    document.getElementById(
+        "giftMessage"
+    );
 
-        "🎵 This song is a little reminder of how special you are to me ❤️",
 
+    const gifts =
+    document.querySelectorAll(
+        ".giftBox"
+    );
 
-        "✨ Some feelings are impossible to explain, but music helps say them.",
 
+    gifts.forEach(gift => {
 
-        "🧵 Every memory becomes another thread in our story."
 
-    ];
+        gift.style.transform =
+        "scale(1)";
 
-
-
-    const randomMessage =
-
-    messages[Math.floor(Math.random() * messages.length)];
-
-
-
-    document
-    .getElementById("musicMessage")
-    .innerHTML = randomMessage;
-
-
-}
-
-/*
-JAVASCRIPT PART 2
-GIFTS + PETS + FINAL LETTER
-*/
-
-
-
-// BIRTHDAY GIFTS 🎁
-
-
-function openGift(number){
-
-
-    let message = "";
-
-
-
-    if(number === 1){
-
-
-        message =
-
-        "🎁 Gift One: I hope your birthday is filled with happiness, laughter, and everything you deserve.";
-
-
-    }
-
-
-
-
-
-    if(number === 2){
-
-
-        message =
-
-        "💌 Gift Two: More memories, more laughs, and hopefully many more birthdays together.";
-
-
-    }
-
-
-
-
-
-    if(number === 3){
-
-
-        message =
-
-        "🧵 Gift Three: A reminder that some connections are special and worth cherishing forever ❤️";
-
-
-    }
-
-
-
-
-
-    document
-
-    .getElementById("giftText")
-
-    .innerHTML = message;
-
-
-
-}
-
-
-
-
-
-
-
-
-
-// GUARDIAN PETS 🐾
-
-
-
-function choosePet(pet){
-
-
-
-    let message = "";
-
-
-
-
-
-    if(pet === "cat"){
-
-
-        message =
-
-        "🐱 Moon Cat says: I will protect your dreams and bring you peaceful nights.";
-
-
-    }
-
-
-
-
-
-
-
-    if(pet === "dog"){
-
-
-        message =
-
-        "🐶 Star Dog says: I will protect your smiles and happiest memories.";
-
-
-    }
-
-
-
-
-
-
-
-    if(pet === "bear"){
-
-
-        message =
-
-        "🧸 Heart Bear says: You deserve kindness, happiness, and endless love.";
-
-
-    }
-
-
-
-
-
-
-
-    document
-
-    .getElementById("petText")
-
-    .innerHTML = message;
-
-
-
-}
-
-
-
-
-
-
-
-
-
-// FINAL LETTER 💌
-
-
-
-function openLetter(){
-
-
-
-    const letter =
-
-    document.getElementById("letter");
-
-
-
-
-    letter.style.display = "block";
-
-
-
-    letter.scrollIntoView({
-
-        behavior: "smooth"
 
     });
 
 
 
+
+
+    if(gifts[number - 1]) {
+
+
+        gifts[number - 1].style.transform =
+        "scale(1.2) rotate(5deg)";
+
+
+    }
+
+
+
+
+
+
+    const messages = {
+
+
+        1:
+        "❤️ Happy Birthday Jose. I hope your day is filled with happiness and everything you deserve.",
+
+
+        2:
+        "✨ I hope this is only the beginning of many more birthdays and memories together.",
+
+
+        3:
+        "🧵 The red string represents the special connection that brought this birthday story to life."
+
+    };
+
+
+
+
+
+    message.innerHTML =
+    messages[number];
+
+
+
 }
 
-/*
-JAVASCRIPT PART 3
-RED STRING THEORY MAGIC EFFECTS 🧵✨
-*/
 
 
 
-// FLOATING HEARTS ❤️
-
-function createHeart(){
-
-
-    const heart = document.createElement("div");
-
-
-    heart.innerHTML = "❤️";
-
-
-    heart.className = "floating-heart";
-
-
-    heart.style.left =
-    Math.random() * 100 + "vw";
-
-
-    heart.style.animationDuration =
-    (Math.random() * 3 + 3) + "s";
 
 
 
-    document.body.appendChild(heart);
+// =========================
+// FINAL CELEBRATION
+// =========================
+
+
+function celebrate(){
+
+
+    const ending =
+    document.querySelector(
+        ".endingScene"
+    );
 
 
 
-    setTimeout(()=>{
+    if(ending){
 
-        heart.remove();
 
-    },6000);
+        ending.classList.add(
+            "celebrate"
+        );
+
+
+    }
 
 
 }
-
-
-
-setInterval(createHeart,1500);
-
-
-
-
-
-
-
-// CLICK RED STRING EFFECT 🧵
-
-
-document.addEventListener("click", function(event){
-
-
-    const string =
-    document.createElement("div");
-
-
-
-    string.innerHTML = "🧵";
-
-
-
-    string.className =
-    "string-effect";
-
-
-
-    string.style.left =
-    event.pageX + "px";
-
-
-
-    string.style.top =
-    event.pageY + "px";
-
-
-
-    document.body.appendChild(string);
-
-
-
-
-    setTimeout(()=>{
-
-
-        string.remove();
-
-
-    },1000);
-
-
-
-});
